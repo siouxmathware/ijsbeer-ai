@@ -5,7 +5,7 @@ IJsbeer-AI
 
 # Basic structure
 The pipeline consists of four distinct steps.
-1. [Post-correction]
+1. [[Post-correction]]
 1. NER using BERT
 1. NER using lists
 1. Modernisation
