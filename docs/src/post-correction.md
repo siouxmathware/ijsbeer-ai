@@ -1,0 +1,2 @@
+# Post-correction
+This step of the pipeline deals with processing the raw string input into a form that is usable by the later steps of the pipeline. This consists of two steps that will be detailed below.
