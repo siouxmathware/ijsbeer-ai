@@ -1,0 +1,42 @@
+lib.post\_correction package
+============================
+
+.. automodule:: lib.post_correction
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+lib.post\_correction.freq\_table\_clean\_up module
+--------------------------------------------------
+
+.. automodule:: lib.post_correction.freq_table_clean_up
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+lib.post\_correction.post\_correction module
+--------------------------------------------
+
+.. automodule:: lib.post_correction.post_correction
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+lib.post\_correction.replacer module
+------------------------------------
+
+.. automodule:: lib.post_correction.replacer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+lib.post\_correction.string\_to\_sentences module
+-------------------------------------------------
+
+.. automodule:: lib.post_correction.string_to_sentences
+   :members:
+   :undoc-members:
+   :show-inheritance:

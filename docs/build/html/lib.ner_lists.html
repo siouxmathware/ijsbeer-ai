@@ -1,0 +1,580 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>lib.ner_lists package &mdash; ijsbeer-ai  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="lib.post_correction package" href="lib.post_correction.html" />
+    <link rel="prev" title="lib.ner_bert package" href="lib.ner_bert.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ijsbeer-ai
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="lib.html">lib package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="lib.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="lib.modernisation.html">lib.modernisation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.ner_bert.html">lib.ner_bert package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">lib.ner_lists package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.direct_list_creator">lib.ner_lists.direct_list_creator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.entity">lib.ner_lists.entity module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.find_entities_given_direct_list">lib.ner_lists.find_entities_given_direct_list module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.find_entities_given_tree">lib.ner_lists.find_entities_given_tree module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.finders">lib.ner_lists.finders module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.get_searchable_words">lib.ner_lists.get_searchable_words module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.ner_lists">lib.ner_lists.ner_lists module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.tree_creator">lib.ner_lists.tree_creator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_lists.tree_matcher">lib.ner_lists.tree_matcher module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lib.post_correction.html">lib.post_correction package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.constants">lib.constants module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.schema">lib.schema module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ijsbeer-ai</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="lib.html">lib package</a> &raquo;</li>
+        
+      <li>lib.ner_lists package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/lib.ner_lists.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib.ner_lists">
+<span id="lib-ner-lists-package"></span><h1>lib.ner_lists package<a class="headerlink" href="#module-lib.ner_lists" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-lib.ner_lists.direct_list_creator">
+<span id="lib-ner-lists-direct-list-creator-module"></span><h2>lib.ner_lists.direct_list_creator module<a class="headerlink" href="#module-lib.ner_lists.direct_list_creator" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.direct_list_creator.DirectListCreator">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.direct_list_creator.</span></code><code class="sig-name descname"><span class="pre">DirectListCreator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.direct_list_creator.DirectListCreator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to load data permutative_lists and compare text with these list to check for occurences.</p>
+<dl class="py method">
+<dt id="lib.ner_lists.direct_list_creator.DirectListCreator.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.direct_list_creator.DirectListCreator.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self as a function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.direct_list_creator.DirectListCreator.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.direct_list_creator.DirectListCreator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.ner_lists.entity">
+<span id="lib-ner-lists-entity-module"></span><h2>lib.ner_lists.entity module<a class="headerlink" href="#module-lib.ner_lists.entity" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.entity.Entity">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.entity.</span></code><code class="sig-name descname"><span class="pre">Entity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canonical</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.entity.Entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="lib.ner_lists.entity.Entity.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canonical</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.entity.Entity.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.ner_lists.find_entities_given_direct_list">
+<span id="lib-ner-lists-find-entities-given-direct-list-module"></span><h2>lib.ner_lists.find_entities_given_direct_list module<a class="headerlink" href="#module-lib.ner_lists.find_entities_given_direct_list" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.find_entities_given_direct_list.FindEntitiesGivenDirectList">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.find_entities_given_direct_list.</span></code><code class="sig-name descname"><span class="pre">FindEntitiesGivenDirectList</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direct_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.find_entities_given_direct_list.FindEntitiesGivenDirectList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="lib.ner_lists.find_entities_given_direct_list.FindEntitiesGivenDirectList.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.find_entities_given_direct_list.FindEntitiesGivenDirectList.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self as a function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.find_entities_given_direct_list.FindEntitiesGivenDirectList.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direct_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.find_entities_given_direct_list.FindEntitiesGivenDirectList.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.ner_lists.find_entities_given_tree">
+<span id="lib-ner-lists-find-entities-given-tree-module"></span><h2>lib.ner_lists.find_entities_given_tree module<a class="headerlink" href="#module-lib.ner_lists.find_entities_given_tree" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.find_entities_given_tree.FindEntitiesGivenTree">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.find_entities_given_tree.</span></code><code class="sig-name descname"><span class="pre">FindEntitiesGivenTree</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.find_entities_given_tree.FindEntitiesGivenTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="lib.ner_lists.find_entities_given_tree.FindEntitiesGivenTree.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.find_entities_given_tree.FindEntitiesGivenTree.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self as a function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.find_entities_given_tree.FindEntitiesGivenTree.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.find_entities_given_tree.FindEntitiesGivenTree.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.find_entities_given_tree.FindEntitiesGivenTree.remove_overlap">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">remove_overlap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.find_entities_given_tree.FindEntitiesGivenTree.remove_overlap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.ner_lists.finders">
+<span id="lib-ner-lists-finders-module"></span><h2>lib.ner_lists.finders module<a class="headerlink" href="#module-lib.ner_lists.finders" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.finders.DirectListFinder">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.finders.</span></code><code class="sig-name descname"><span class="pre">DirectListFinder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finders.DirectListFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.ner_lists.finders.Finder" title="lib.ner_lists.finders.Finder"><code class="xref py py-class docutils literal notranslate"><span class="pre">lib.ner_lists.finders.Finder</span></code></a></p>
+<dl class="py method">
+<dt id="lib.ner_lists.finders.DirectListFinder.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finders.DirectListFinder.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lib.ner_lists.finders.Finder">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.finders.</span></code><code class="sig-name descname"><span class="pre">Finder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finders.Finder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="lib.ner_lists.finders.Finder.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finders.Finder.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self as a function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.finders.Finder.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finders.Finder.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.finders.Finder.merge_results">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">merge_results</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#lib.ner_lists.entity.Entity" title="lib.ner_lists.entity.Entity"><span class="pre">lib.ner_lists.entity.Entity</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finders.Finder.merge_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lib.ner_lists.finders.TreeFinder">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.finders.</span></code><code class="sig-name descname"><span class="pre">TreeFinder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finders.TreeFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.ner_lists.finders.Finder" title="lib.ner_lists.finders.Finder"><code class="xref py py-class docutils literal notranslate"><span class="pre">lib.ner_lists.finders.Finder</span></code></a></p>
+<dl class="py method">
+<dt id="lib.ner_lists.finders.TreeFinder.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finders.TreeFinder.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.ner_lists.get_searchable_words">
+<span id="lib-ner-lists-get-searchable-words-module"></span><h2>lib.ner_lists.get_searchable_words module<a class="headerlink" href="#module-lib.ner_lists.get_searchable_words" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.get_searchable_words.GetWords">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.get_searchable_words.</span></code><code class="sig-name descname"><span class="pre">GetWords</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="lib.ner_lists.get_searchable_words.GetWords.__call__">
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWords.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self as a function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.get_searchable_words.GetWords.__init__">
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWords.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lib.ner_lists.get_searchable_words.GetWordsBert">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.get_searchable_words.</span></code><code class="sig-name descname"><span class="pre">GetWordsBert</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsBert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.ner_lists.get_searchable_words.GetWords" title="lib.ner_lists.get_searchable_words.GetWords"><code class="xref py py-class docutils literal notranslate"><span class="pre">lib.ner_lists.get_searchable_words.GetWords</span></code></a></p>
+<dl class="py method">
+<dt id="lib.ner_lists.get_searchable_words.GetWordsBert.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsBert.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sentences</strong> – list of lists. Each element is a dict that represents a word. The intermediate level lists</p>
+</dd>
+</dl>
+<p>represent a sentence each. spaces and comma’s are still considered words at this level
+:return : found_entities. A list of lists. Now each intermediate list represents a BERT-found entity of type
+<cite>self.type_of_list</cite> (e.g. a location)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.get_searchable_words.GetWordsBert.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsBert.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lib.ner_lists.get_searchable_words.GetWordsNer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.get_searchable_words.</span></code><code class="sig-name descname"><span class="pre">GetWordsNer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsNer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.ner_lists.get_searchable_words.GetWords" title="lib.ner_lists.get_searchable_words.GetWords"><code class="xref py py-class docutils literal notranslate"><span class="pre">lib.ner_lists.get_searchable_words.GetWords</span></code></a></p>
+<dl class="py method">
+<dt id="lib.ner_lists.get_searchable_words.GetWordsNer.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsNer.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>returning the word dicts for which word[‘ner’] is True</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.get_searchable_words.GetWordsNer.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsNer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.ner_lists.ner_lists">
+<span id="lib-ner-lists-ner-lists-module"></span><h2>lib.ner_lists.ner_lists module<a class="headerlink" href="#module-lib.ner_lists.ner_lists" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.ner_lists.NerLists">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.ner_lists.</span></code><code class="sig-name descname"><span class="pre">NerLists</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.92</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.ner_lists.NerLists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Find entities by comparing words with lists</p>
+<dl class="py method">
+<dt id="lib.ner_lists.ner_lists.NerLists.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.ner_lists.NerLists.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Because we are only interested in words for which ner is True, merging is a little bit more complicated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.ner_lists.NerLists.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.92</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.ner_lists.NerLists.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.ner_lists.NerLists.prefill_empty_labels">
+<code class="sig-name descname"><span class="pre">prefill_empty_labels</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.ner_lists.NerLists.prefill_empty_labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.ner_lists.tree_creator">
+<span id="lib-ner-lists-tree-creator-module"></span><h2>lib.ner_lists.tree_creator module<a class="headerlink" href="#module-lib.ner_lists.tree_creator" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.tree_creator.TreeCreator">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.tree_creator.</span></code><code class="sig-name descname"><span class="pre">TreeCreator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_creator.TreeCreator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to load data permutative_lists and compare text with these list to check for occurences.</p>
+<dl class="py method">
+<dt id="lib.ner_lists.tree_creator.TreeCreator.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_creator.TreeCreator.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self as a function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.tree_creator.TreeCreator.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_creator.TreeCreator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="lib.ner_lists.tree_creator.create_freq_table">
+<code class="sig-prename descclassname"><span class="pre">lib.ner_lists.tree_creator.</span></code><code class="sig-name descname"><span class="pre">create_freq_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_creator.create_freq_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="lib.ner_lists.tree_creator.create_lists">
+<code class="sig-prename descclassname"><span class="pre">lib.ner_lists.tree_creator.</span></code><code class="sig-name descname"><span class="pre">create_lists</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_creator.create_lists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="lib.ner_lists.tree_creator.create_tree">
+<code class="sig-prename descclassname"><span class="pre">lib.ner_lists.tree_creator.</span></code><code class="sig-name descname"><span class="pre">create_tree</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_creator.create_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-lib.ner_lists.tree_matcher">
+<span id="lib-ner-lists-tree-matcher-module"></span><h2>lib.ner_lists.tree_matcher module<a class="headerlink" href="#module-lib.ner_lists.tree_matcher" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.ner_lists.tree_matcher.TreeMatcher">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_lists.tree_matcher.</span></code><code class="sig-name descname"><span class="pre">TreeMatcher</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_matcher.TreeMatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to match words with list elements</p>
+<dl class="py method">
+<dt id="lib.ner_lists.tree_matcher.TreeMatcher.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_matcher.TreeMatcher.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.tree_matcher.TreeMatcher.find_matches">
+<code class="sig-name descname"><span class="pre">find_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_approx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_matcher.TreeMatcher.find_matches" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method tries to pair groups of n_approx words efficiently.
+By doing a first preselection round in which only a single word is matched,
+we can somewhat minimize calculation time while keeping acceptable performance.
+The threshold for this preselection round depends on the total number of words that you want to match eventually</p>
+<p>n_approx is the approximate number of words in a hit. It influences the threshold for the first hit. Setting it
+higher results in a higher threshold, causing faster performance but possible missed hits. Setting it too low
+results in poor performance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.tree_matcher.TreeMatcher.get_close_matches_scores">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_close_matches_scores</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possibilities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_matcher.TreeMatcher.get_close_matches_scores" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word_group</strong> – a string, might be multiple words concatenated without spaces.</p></li>
+<li><p><strong>possibilities</strong> – list of strings. word_group will be compared to all strings in this list.</p></li>
+<li><p><strong>n</strong> – positive integer. the top-n matches will be returned.</p></li>
+<li><p><strong>cutoff</strong> – percentage of characters that should match before something is considered a match</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>either an empty list -&gt; no match/hit
+or a size 2 tuple with score and word_group string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.tree_matcher.TreeMatcher.score">
+<code class="sig-name descname"><span class="pre">score</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_matcher.TreeMatcher.score" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cutoff_score</strong> – threshold for % of characters that should match between word_group and an el. of word_list</p></li>
+<li><p><strong>word_group</strong> – a string, which is a concatenated list of words that are to be matched</p></li>
+<li><p><strong>word_list</strong> – a list of (space-less concatenated) words that are compared to the word_group elements might be permutations of others, e.g. fortbatavia and bataviafort</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a number, 0&lt;=number&lt;=1. It is the percentage of characters that match in the best match (from the list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.ner_lists.tree_matcher.TreeMatcher.yield_matches">
+<code class="sig-name descname"><span class="pre">yield_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.tree_matcher.TreeMatcher.yield_matches" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i_sentence</strong> – string index</p></li>
+<li><p><strong>sentence</strong> – list of words</p></li>
+<li><p><strong>i</strong> – index of word in sentence (which matches the key of an element in the tree-dictionary)</p></li>
+<li><p><strong>entity_key</strong> – The tree is essentially a large dictionary. entity_key is the key of the most likely entity</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="lib.post_correction.html" class="btn btn-neutral float-right" title="lib.post_correction package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lib.ner_bert.html" class="btn btn-neutral float-left" title="lib.ner_bert package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

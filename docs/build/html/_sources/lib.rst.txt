@@ -1,0 +1,45 @@
+lib package
+===========
+
+.. automodule:: lib
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   lib.modernisation
+   lib.ner_bert
+   lib.ner_lists
+   lib.post_correction
+
+Submodules
+----------
+
+lib.constants module
+--------------------
+
+.. automodule:: lib.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+lib.pipeline module
+-------------------
+
+.. automodule:: lib.pipeline
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+lib.schema module
+-----------------
+
+.. automodule:: lib.schema
+   :members:
+   :undoc-members:
+   :show-inheritance:
