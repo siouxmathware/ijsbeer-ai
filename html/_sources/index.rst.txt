@@ -1,12 +1,43 @@
-Welcome to ijsbeer-ai's documentation!
-======================================
+Welcome to the documentation of the ijsbeer ai pipeline!
+========================================================
+
+The purpose of the ijsbeer ai pipeline is to enrich historical Dutch texts with useful data.
+This consists of four separate modules:
+
+#. String-to-sentence: split input string into words
+
+#. Post-correction:  Correct any presumed mistakes in the HTR for each word.
+
+#. Named Entity Recognition (NER) using BERT.
+
+#. Named Entity Recognition (NER) using lists. This can be defined to only search within the results of the NER BERT.
+
+#. Modernisation of the words. This step is done last so that found entities can be skipped.
+
+Each of these steps is documented in more detail in the corresponding subpackage of the :ref:`lib package` documentation.
+
+Typical usage
+-------------
+
+The intended use of this pipeline is that it is containerised and called via POST-requests to the server.
+More details on this interface are given in the :ref:`server package` documentation.
+Below we present a number of examples of server calls as they might be used by a user of this pipeline.
+
+.. code-block:: python
+
+    server_response = requests.post(
+        url=URL + 'pipeline',
+        json={"input_data": "Brieven van Cornelis Lardijn, Eindhoven, 25 maart 2021"}
+    )
+    full_json = server_response.json()
+    assert full_json['message'] =='Success'
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   server
    lib
+   server
 
 Indices and tables
 ==================

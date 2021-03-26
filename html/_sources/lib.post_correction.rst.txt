@@ -24,19 +24,3 @@ lib.post\_correction.post\_correction module
    :members:
    :undoc-members:
    :show-inheritance:
-
-lib.post\_correction.replacer module
-------------------------------------
-
-.. automodule:: lib.post_correction.replacer
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-lib.post\_correction.string\_to\_sentences module
--------------------------------------------------
-
-.. automodule:: lib.post_correction.string_to_sentences
-   :members:
-   :undoc-members:
-   :show-inheritance:

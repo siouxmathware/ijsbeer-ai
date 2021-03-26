@@ -16,6 +16,8 @@
 
   
   
+    <link rel="shortcut icon" href="_static/favicon-188b.png"/>
+  
 
   
   
@@ -39,7 +41,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="lib.modernisation package" href="lib.modernisation.html" />
-    <link rel="prev" title="server package" href="server.html" /> 
+    <link rel="prev" title="Welcome to the documentation of the ijsbeer ai pipeline!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,21 +88,22 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">lib package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="lib.modernisation.html">lib.modernisation package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lib.ner_bert.html">lib.ner_bert package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lib.ner_lists.html">lib.ner_lists package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lib.post_correction.html">lib.post_correction package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.string_to_sentences.html">lib.string_to_sentences package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-lib.constants">lib.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lib-pipeline-module">lib.pipeline module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-lib.schema">lib.schema module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 </ul>
 
             
@@ -185,28 +188,31 @@
 <li class="toctree-l1"><a class="reference internal" href="lib.ner_bert.html">lib.ner_bert package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lib.ner_bert.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.ner_bert.html#module-lib.ner_bert.inference">lib.ner_bert.inference module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.ner_bert.html#module-lib.ner_bert.ner_bert">lib.ner_bert.ner_bert module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.ner_bert.html#lib-ner-bert-ner-bert-module">lib.ner_bert.ner_bert module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lib.ner_lists.html">lib.ner_lists package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.direct_list_creator">lib.ner_lists.direct_list_creator module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.direct_finder">lib.ner_lists.direct_finder module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.entity">lib.ner_lists.entity module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.find_entities_given_direct_list">lib.ner_lists.find_entities_given_direct_list module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.find_entities_given_tree">lib.ner_lists.find_entities_given_tree module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.finders">lib.ner_lists.finders module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.finder">lib.ner_lists.finder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.fuzzy_finder">lib.ner_lists.fuzzy_finder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.fuzzy_matcher">lib.ner_lists.fuzzy_matcher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.fuzzy_permutative_finder">lib.ner_lists.fuzzy_permutative_finder module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.get_searchable_words">lib.ner_lists.get_searchable_words module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.ner_lists">lib.ner_lists.ner_lists module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.tree_creator">lib.ner_lists.tree_creator module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.tree_matcher">lib.ner_lists.tree_matcher module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lib.post_correction.html">lib.post_correction package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#module-lib.post_correction.freq_table_clean_up">lib.post_correction.freq_table_clean_up module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#module-lib.post_correction.post_correction">lib.post_correction.post_correction module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#module-lib.post_correction.replacer">lib.post_correction.replacer module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#module-lib.post_correction.string_to_sentences">lib.post_correction.string_to_sentences module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lib.string_to_sentences.html">lib.string_to_sentences package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lib.string_to_sentences.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.string_to_sentences.html#module-lib.string_to_sentences.replacer">lib.string_to_sentences.replacer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.string_to_sentences.html#module-lib.string_to_sentences.string_to_sentences">lib.string_to_sentences.string_to_sentences module</a></li>
 </ul>
 </li>
 </ul>
@@ -217,57 +223,64 @@
 </div>
 <div class="section" id="module-lib.constants">
 <span id="lib-constants-module"></span><h2>lib.constants module<a class="headerlink" href="#module-lib.constants" title="Permalink to this headline">¶</a></h2>
+<p>This module provides common constants to various other (sub)modules.</p>
+<p>In particular the location of the data is defined here in a single location. The definition is always used dynamically
+so that it may be overridden by tests, which are performed on smaller datasets.</p>
 </div>
-<div class="section" id="module-lib.pipeline">
-<span id="lib-pipeline-module"></span><h2>lib.pipeline module<a class="headerlink" href="#module-lib.pipeline" title="Permalink to this headline">¶</a></h2>
-<p>Responsible for the who NER pipeline
-- post-correction
-- modernisation
-- ner</p>
-<dl class="py class">
-<dt id="lib.pipeline.Pipeline">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.pipeline.</span></code><code class="sig-name descname"><span class="pre">Pipeline</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">berts_to_initialize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pipeline.Pipeline" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Contains the whole ner pipeline logic</p>
-<dl class="py method">
-<dt id="lib.pipeline.Pipeline.__call__">
-<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pipeline.Pipeline.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns dict with a shape according to lib.schema (format.schema.json)
-Depending on which parts of the pipeline are called, the required input and expected output will be different.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.pipeline.Pipeline.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">berts_to_initialize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pipeline.Pipeline.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="section" id="lib-pipeline-module">
+<h2>lib.pipeline module<a class="headerlink" href="#lib-pipeline-module" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-lib.schema">
 <span id="lib-schema-module"></span><h2>lib.schema module<a class="headerlink" href="#module-lib.schema" title="Permalink to this headline">¶</a></h2>
-<p>Verify integrity of the json schema</p>
 <dl class="py class">
 <dt id="lib.schema.Validator">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.schema.</span></code><code class="sig-name descname"><span class="pre">Validator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.schema.Validator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Valicator class that allows validating (partial) results of the pipeline</p>
+<p>Valicator class that allows validating (partial) results of the pipeline.
+The schema used is given by <a class="reference download internal" download="" href="_downloads/9eb3b3cd707153332e0fca6a4c018e03/format.schema.json"><code class="xref download docutils literal notranslate"><span class="pre">format.schema.json</span></code></a>.
+Currently only used during testing due to possible performance impact during production.</p>
+<p>TODO: Make the validator available via the API.</p>
 <dl class="py attribute">
 <dt id="lib.schema.Validator.IGNORABLE">
-<code class="sig-name descname"><span class="pre">IGNORABLE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">('modernisation',</span> <span class="pre">'ner_bert',</span> <span class="pre">'ner_lists')</span></em><a class="headerlink" href="#lib.schema.Validator.IGNORABLE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">IGNORABLE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">('post_correction',</span> <span class="pre">'ner_bert',</span> <span class="pre">'ner_lists',</span> <span class="pre">'modernisation')</span></em><a class="headerlink" href="#lib.schema.Validator.IGNORABLE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="lib.schema.Validator.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.schema.Validator.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call self as a function.</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>json_data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – Pipeline output data that is to be verified against the schema.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None, exception is raised if validation fails.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="lib.schema.Validator.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.schema.Validator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ignore</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>) – Which steps to ignore in the validation, should be one of
+<a class="reference internal" href="#lib.schema.Validator.IGNORABLE" title="lib.schema.Validator.IGNORABLE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">IGNORABLE</span></code></a>.
+Useful when calling only a subset of all possible steps of the pipeline.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.schema.Validator.from_include">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_include</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.schema.Validator.from_include" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>include</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>]) – Which steps to include. If <cite>None</cite> (default) all steps will be included.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Instance of the Validator that considers only the specified steps.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -282,7 +295,7 @@ Depending on which parts of the pipeline are called, the required input and expe
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="lib.modernisation.html" class="btn btn-neutral float-right" title="lib.modernisation package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="server.html" class="btn btn-neutral float-left" title="server package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the documentation of the ijsbeer ai pipeline!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

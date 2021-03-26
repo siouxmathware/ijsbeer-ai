@@ -16,6 +16,7 @@ Subpackages
    lib.ner_bert
    lib.ner_lists
    lib.post_correction
+   lib.string_to_sentences
 
 Submodules
 ----------

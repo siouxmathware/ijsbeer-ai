@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>lib.string_to_sentences package &mdash; ijsbeer-ai  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon-188b.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="server package" href="server.html" />
+    <link rel="prev" title="lib.post_correction package" href="lib.post_correction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ijsbeer-ai
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="lib.html">lib package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="lib.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="lib.modernisation.html">lib.modernisation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.ner_bert.html">lib.ner_bert package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.ner_lists.html">lib.ner_lists package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.post_correction.html">lib.post_correction package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">lib.string_to_sentences package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.string_to_sentences.replacer">lib.string_to_sentences.replacer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-lib.string_to_sentences.string_to_sentences">lib.string_to_sentences.string_to_sentences module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.constants">lib.constants module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-pipeline-module">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.schema">lib.schema module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ijsbeer-ai</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="lib.html">lib package</a> &raquo;</li>
+        
+      <li>lib.string_to_sentences package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/lib.string_to_sentences.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lib.string_to_sentences">
+<span id="lib-string-to-sentences-package"></span><h1>lib.string_to_sentences package<a class="headerlink" href="#module-lib.string_to_sentences" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-lib.string_to_sentences.replacer">
+<span id="lib-string-to-sentences-replacer-module"></span><h2>lib.string_to_sentences.replacer module<a class="headerlink" href="#module-lib.string_to_sentences.replacer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.string_to_sentences.replacer.Replacer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.string_to_sentences.replacer.</span></code><code class="sig-name descname"><span class="pre">Replacer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Handles several types of regex-based on operations on one or multiple words.</p>
+<dl class="py method">
+<dt id="lib.string_to_sentences.replacer.Replacer.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The key of the word dict that is the input for the methods, e.g. “word”</p></li>
+<li><p><strong>to_key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The key of the word dict that is to contain the output of the methods, e.g. “word”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.replacer.Replacer.get_replacement_inputs">
+<code class="sig-name descname"><span class="pre">get_replacement_inputs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words_sub</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.get_replacement_inputs" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>words_sub</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – The words that are found to be a match to the patterns.</p></li>
+<li><p><strong>patterns</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code>]) – The patterns to which the words were matched.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Those parts of the words_sub that match the group(s) in the corresponding regex patterns.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.replacer.Replacer.joinor">
+<code class="sig-name descname"><span class="pre">joinor</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.joinor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Function (N.B. the method returns a function) that will take a series of words and join them into a
+single word. To be used as an input for
+<code class="docutils literal notranslate"><span class="pre">Replacer.replace_words(...,</span> <span class="pre">replacement_function=Replacer.joinor(),</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.replacer.Replacer.replace_words">
+<code class="sig-name descname"><span class="pre">replace_words</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.replace_words" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>words</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – The list of words in which to search for patterns and apply replacements.</p></li>
+<li><p><strong>patterns</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code>]) – The patterns to search.</p></li>
+<li><p><strong>replace_function</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>) – The replace_function is called on the words found to match the patterns and the output
+is placed in the list of words in their place.</p></li>
+<li><p><strong>recursive</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to apply the replacement also to words that have already been replaced. If False
+(default), the search will skip to the end of the replaced words after a replacement.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.replacer.Replacer.return_matches">
+<code class="sig-name descname"><span class="pre">return_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.return_matches" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>words</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – List of words through which to search for the pattern</p></li>
+<li><p><strong>patterns</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code>]]) – The patterns to search a subsequence of the words is matched against the sequence of patters:
+each word must match the appropriate pattern</p></li>
+<li><p><strong>start</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Which element of the patterns is considered to be the start of the match.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Indices of matches, offset by the start parameter.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.replacer.Replacer.splittor">
+<code class="sig-name descname"><span class="pre">splittor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.splittor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>regex</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code>) – The regex that splits a word into multiple words. Regex groups indicate what should become new
+words.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Function (N.B. the method returns a function) that will take a single word and split it into several
+different words. To be used as an input for
+<code class="docutils literal notranslate"><span class="pre">Replacer.replace_words(...,</span> <span class="pre">replacement_function=Replacer.splittor(),</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.string_to_sentences.string_to_sentences">
+<span id="lib-string-to-sentences-string-to-sentences-module"></span><h2>lib.string_to_sentences.string_to_sentences module<a class="headerlink" href="#module-lib.string_to_sentences.string_to_sentences" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.string_to_sentences.string_to_sentences.</span></code><code class="sig-name descname"><span class="pre">StringToSentences</span></code><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Converts a given string to a list of lists of dicts, see
+<a class="reference internal" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.__call__" title="lib.string_to_sentences.string_to_sentences.StringToSentences.__call__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__call__</span></code></a> for final result form.</p>
+<dl class="py method">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> – A string representing the historic text. Words are considered to be separated, broadly speaking, by
+either spaces and/or newlines. A double newline is interpreted to separate sentences. Other methods are also
+used to separate sentences based on punctuation.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of lists of words object with format example given below.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;word&quot;</span><span class="p">:</span> <span class="s2">&quot;Weerld!&quot;</span><span class="p">,</span> <span class="s2">&quot;begin_char&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;end_char&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;ner&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Here begin/end char represents the original place inside text, can be used for locating this word in the
+original document.
+The “ner” key tells if this word should be used for named entity recognition.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.get_list_of_dict_word_and_chars">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_list_of_dict_word_and_chars</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.get_list_of_dict_word_and_chars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the string into words where a word can be a normal word, but also a linebreak, space or any other special
+character.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.line_word_splits">
+<code class="sig-name descname"><span class="pre">line_word_splits</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.line_word_splits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deal with detectable word splits caused by line breaks. For applying ner and also do post correction
+or modernisation it is better to look at the whole word.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.replacer">
+<code class="sig-name descname"><span class="pre">replacer</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;lib.string_to_sentences.replacer.Replacer</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.replacer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.set_ner_flag">
+<code class="sig-name descname"><span class="pre">set_ner_flag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.set_ner_flag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set ner to False for words that match the NER (anti)pattern</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.split_in_sentences">
+<code class="sig-name descname"><span class="pre">split_in_sentences</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.split_in_sentences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deal with the line breaks.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="server.html" class="btn btn-neutral float-right" title="server package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lib.post_correction.html" class="btn btn-neutral float-left" title="lib.post_correction package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

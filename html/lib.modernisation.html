@@ -16,6 +16,8 @@
 
   
   
+    <link rel="shortcut icon" href="_static/favicon-188b.png"/>
+  
 
   
   
@@ -86,7 +88,6 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="lib.html">lib package</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="lib.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">lib.modernisation package</a><ul>
@@ -100,14 +101,16 @@
 <li class="toctree-l3"><a class="reference internal" href="lib.ner_bert.html">lib.ner_bert package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lib.ner_lists.html">lib.ner_lists package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lib.post_correction.html">lib.post_correction package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.string_to_sentences.html">lib.string_to_sentences package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.constants">lib.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-pipeline-module">lib.pipeline module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.schema">lib.schema module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 </ul>
 
             
@@ -184,23 +187,32 @@
 </div>
 <div class="section" id="module-lib.modernisation.modernisation">
 <span id="lib-modernisation-modernisation-module"></span><h2>lib.modernisation.modernisation module<a class="headerlink" href="#module-lib.modernisation.modernisation" title="Permalink to this headline">¶</a></h2>
-<p>This module is responsible for translating old dutch to dutch using different methods.</p>
 <dl class="py class">
 <dt id="lib.modernisation.modernisation.Modernisation">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.modernisation.modernisation.</span></code><code class="sig-name descname"><span class="pre">Modernisation</span></code><a class="headerlink" href="#lib.modernisation.modernisation.Modernisation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Small class responsible for modernisation</p>
+<p>Class responsible for translating historical Dutch into modern Dutch.
+It uses a variety of techniques.
+The goal is solely to aid of the user reading the historical texts.</p>
 <dl class="py method">
 <dt id="lib.modernisation.modernisation.Modernisation.__call__">
-<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.modernisation.Modernisation.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Per word adds the modern dutch translation of the word.</p>
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.modernisation.Modernisation.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sentences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – List of lists of words</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The same list of lists, with the fields “remove_whitespace_for_modernisation” and “modernisation” added
+to each word. The former is currently unused, but could be used if modernisation is extended to consider
+multiple words.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="lib.modernisation.modernisation.Modernisation.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.modernisation.Modernisation.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -211,35 +223,54 @@
 <dt id="lib.modernisation.regex_rules.RegexRules">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.modernisation.regex_rules.</span></code><code class="sig-name descname"><span class="pre">RegexRules</span></code><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Contains set of rules which help translating from historic Dutch the modern Dutch. A goal was to make the set of
-rules not only idempotent but also really not affecting any modern Dutch word.</p>
+<p>Deals with modernising historical Dutch words based on regular expressions.
+All regular expressions are to be divided in three categories:</p>
+<ol class="arabic simple">
+<li><p>Line-break regular expressions that define how words can be divided over multiple lines in the historical text.</p></li>
+<li><p>Direct word-to-word translations.</p></li>
+<li><p>Further regular expressions on parts of words, these are all heuristically found.</p></li>
+</ol>
+<p>The first and third are both applied by calls to the
+<a class="reference internal" href="#lib.modernisation.regex_rules.RegexRules.regex_subs" title="lib.modernisation.regex_rules.RegexRules.regex_subs"><code class="xref py py-meth docutils literal notranslate"><span class="pre">regex_subs</span></code></a> method. The second is handled by the
+<a class="reference internal" href="#lib.modernisation.regex_rules.RegexRules.dict_lookup" title="lib.modernisation.regex_rules.RegexRules.dict_lookup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dict_lookup</span></code></a> method.</p>
 <dl class="py method">
 <dt id="lib.modernisation.regex_rules.RegexRules.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Loads the rules.</p>
+<dd><p>Loads the line-break rules, dictionaries and other rules from various sources.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="lib.modernisation.regex_rules.RegexRules.dict_lookup">
-<code class="sig-name descname"><span class="pre">dict_lookup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form_lowercase</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules.dict_lookup" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.modernisation.regex_rules.RegexRules.is_word_rule">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">is_word_rule</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules.is_word_rule" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname"><span class="pre">dict_lookup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form_lowercase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules.dict_lookup" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>word_form_lowercase</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Lower case form of the word to modernise</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A tuple, the first element indicated the found replacement (if any), the second whether a replacement
+was found (True) or not (False).</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="lib.modernisation.regex_rules.RegexRules.regex_subs">
-<code class="sig-name descname"><span class="pre">regex_subs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form_lowercase</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules.regex_subs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<code class="sig-name descname"><span class="pre">regex_subs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form_lowercase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules.regex_subs" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word_form_lowercase</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Lower case form of the word to modernise</p></li>
+<li><p><strong>filename</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The filename for which to apply regexes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A tuple, the first element indicated the result of applying the regular expressions, the second whether
+the regex changed the word-form (True) or not (False).</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="lib.modernisation.regex_rules.split_line">
-<code class="sig-prename descclassname"><span class="pre">lib.modernisation.regex_rules.</span></code><code class="sig-name descname"><span class="pre">split_line</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.split_line" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
 </div>
 <div class="section" id="module-lib.modernisation.syllable_corrector">
@@ -248,16 +279,37 @@ rules not only idempotent but also really not affecting any modern Dutch word.</
 <dt id="lib.modernisation.syllable_corrector.SyllableCorrector">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.modernisation.syllable_corrector.</span></code><code class="sig-name descname"><span class="pre">SyllableCorrector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_corrector.SyllableCorrector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Modernisation strategy by substituting syllables and combinations thereof by their modernised equivalents. The
+default replacements used are given by the human-readable
+<a class="reference download internal" download="" href="_downloads/8d09f1a4dccee3caa0f72b0de7613d96/switches.json"><code class="xref download docutils literal notranslate"><span class="pre">switches.json</span></code></a>.
+The splitting into syllables is handled by the
+<a class="reference internal" href="#lib.modernisation.syllable_tokenizer.SyllableTokenizer" title="lib.modernisation.syllable_tokenizer.SyllableTokenizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">SyllableTokenizer</span></code></a> class.</p>
 <dl class="py method">
 <dt id="lib.modernisation.syllable_corrector.SyllableCorrector.__call__">
-<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_corrector.SyllableCorrector.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call self as a function.</p>
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form_lowercase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_corrector.SyllableCorrector.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>word_form_lowercase</strong> – The lower case word-form to be modernised.</p></li>
+<li><p><strong>verbose</strong> – Flag whether to output extra info for debugging (True) or not (False).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A tuple, the first element indicated the result of applying the syllabel corrector, the second whether
+the regex changed the word-form (True) or not (False).</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="lib.modernisation.syllable_corrector.SyllableCorrector.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_corrector.SyllableCorrector.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_name</strong> – The name of the switches file, defaults to <cite>switches.json</cite> the path is given relative to the
+<cite>constants.DATA_DIR</cite> directory.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -266,44 +318,63 @@ rules not only idempotent but also really not affecting any modern Dutch word.</
 <div class="section" id="module-lib.modernisation.syllable_tokenizer">
 <span id="lib-modernisation-syllable-tokenizer-module"></span><h2>lib.modernisation.syllable_tokenizer module<a class="headerlink" href="#module-lib.modernisation.syllable_tokenizer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="lib.modernisation.syllable_tokenizer.Tokenizer">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.modernisation.syllable_tokenizer.</span></code><code class="sig-name descname"><span class="pre">Tokenizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;PAD&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[CLS]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[SEP]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[UNK]'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.Tokenizer" title="Permalink to this definition">¶</a></dt>
+<dt id="lib.modernisation.syllable_tokenizer.SyllableTokenizer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.modernisation.syllable_tokenizer.</span></code><code class="sig-name descname"><span class="pre">SyllableTokenizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;PAD&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[CLS]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[SEP]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[UNK]'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.SyllableTokenizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Splits words into syllables based on some basic rules from (modern) Dutch.
+Four basic rules are followed:</p>
+<ol class="arabic simple">
+<li><p>Two vowels are separated by a single consonant: break before that consonant</p></li>
+<li><p>Two vowels are separated by a multiple consonants: break after the first consonant</p></li>
+<li><p>Compound words must be split according to their components, e.g. broodoven (bread oven) becomes brood.oven and
+not broo.doven as rule 1. would suggest. <em>This rule is currently not implemented.</em></p></li>
+<li><p>The syllable formed must be pronouncable. This rule is implemented by modifying rule 2. to only allow syllables
+to start with combinations of consonants that are considered pronouncable in Dutch. This list is given by
+<a class="reference download internal" download="" href="_downloads/ca6cb83a25dcf999d97192ee9d6abfaf/syll_starts.txt"><code class="xref download docutils literal notranslate"><span class="pre">syll_starts.txt</span></code></a>. The list was formed by studying all
+consonant combinations that exist at the beginning of Dutch words from a frequency table.</p></li>
+</ol>
+<p>See <a class="reference external" href="https://www.dutchgrammar.com/nl/?n=SpellingAndPronunciation.05">www.dutchgrammar.com</a> for more elaborate
+examples.</p>
 <dl class="py method">
-<dt id="lib.modernisation.syllable_tokenizer.Tokenizer.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;PAD&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[CLS]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[SEP]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[UNK]'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.Tokenizer.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dt id="lib.modernisation.syllable_tokenizer.SyllableTokenizer.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;PAD&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[CLS]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[SEP]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[UNK]'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.SyllableTokenizer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pad</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Representation of the pad-token</p></li>
+<li><p><strong>start</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Representation of the start-token</p></li>
+<li><p><strong>end</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Representation of the end-token</p></li>
+<li><p><strong>unk</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Representation for any unknown token</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="lib.modernisation.syllable_tokenizer.Tokenizer.decode">
-<code class="sig-name descname"><span class="pre">decode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.Tokenizer.decode" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="lib.modernisation.syllable_tokenizer.SyllableTokenizer.decode">
+<code class="sig-name descname"><span class="pre">decode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.SyllableTokenizer.decode" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tokens</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Tokens of the word</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Word formed from the tokens</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
-<dt id="lib.modernisation.syllable_tokenizer.Tokenizer.encode">
-<code class="sig-name descname"><span class="pre">encode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.Tokenizer.encode" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.modernisation.syllable_tokenizer.Tokenizer.get_rules">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_rules</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.Tokenizer.get_rules" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.modernisation.syllable_tokenizer.Tokenizer.safety_check">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">safety_check</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.Tokenizer.safety_check" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.modernisation.syllable_tokenizer.Tokenizer.split_piece">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">split_piece</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_piece</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.Tokenizer.split_piece" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.modernisation.syllable_tokenizer.Tokenizer.split_word">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">split_word</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.Tokenizer.split_word" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="lib.modernisation.syllable_tokenizer.SyllableTokenizer.encode">
+<code class="sig-name descname"><span class="pre">encode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.SyllableTokenizer.encode" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>word</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Word to be split</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of tokens for the word</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

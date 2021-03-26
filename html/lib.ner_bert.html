@@ -16,6 +16,8 @@
 
   
   
+    <link rel="shortcut icon" href="_static/favicon-188b.png"/>
+  
 
   
   
@@ -86,26 +88,27 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="lib.html">lib package</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="lib.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="lib.modernisation.html">lib.modernisation package</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">lib.ner_bert package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_bert.inference">lib.ner_bert.inference module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-lib.ner_bert.ner_bert">lib.ner_bert.ner_bert module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lib-ner-bert-ner-bert-module">lib.ner_bert.ner_bert module</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="lib.ner_lists.html">lib.ner_lists package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lib.post_correction.html">lib.post_correction package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lib.string_to_sentences.html">lib.string_to_sentences package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.constants">lib.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-pipeline-module">lib.pipeline module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.schema">lib.schema module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 </ul>
 
             
@@ -184,72 +187,65 @@
 <span id="lib-ner-bert-inference-module"></span><h2>lib.ner_bert.inference module<a class="headerlink" href="#module-lib.ner_bert.inference" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="lib.ner_bert.inference.Bert">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_bert.inference.</span></code><code class="sig-name descname"><span class="pre">Bert</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_bert.inference.</span></code><code class="sig-name descname"><span class="pre">Bert</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Abstract Base Class for the BERT to be used in the pipeline. Has a factory method
+<a class="reference internal" href="#lib.ner_bert.inference.Bert.create_bert" title="lib.ner_bert.inference.Bert.create_bert"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_bert</span></code></a> that returns either a real BERT in TensorFlow-style
+based on a .ht weights file or a mocked BERT. PyTorch is no longer supported.</p>
 <dl class="py method">
 <dt id="lib.ner_bert.inference.Bert.__call__">
 <em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call self as a function.</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sentences</strong> – Sentences to do NER on</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Predictions in numpy array form, it is left to the data supplier class to handle the translation to</p>
+</dd>
+</dl>
+<p>readable values.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="lib.ner_bert.inference.Bert.__init__">
-<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nr_tags</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of tags used by the BERT</p></li>
+<li><p><strong>weights_path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Path to the weights file.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="lib.ner_bert.inference.Bert.create_bert">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create_bert</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert.create_bert" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create_bert</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert.create_bert" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vocab</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]) – Number of tags used by the BERT</p></li>
+<li><p><strong>weights_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Path to the weights file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>An instance of the appropriate BERT class, determined by the extension of the weights file:</p>
+<ul class="simple">
+<li><p>.h5 results in a TensorFlow BERT</p></li>
+<li><p>no extension, e.g. by passing an empty string for the weights, results in a mocked BERT</p></li>
+</ul>
+<p>Other implementations are no longer supported.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
 </div>
-<div class="section" id="module-lib.ner_bert.ner_bert">
-<span id="lib-ner-bert-ner-bert-module"></span><h2>lib.ner_bert.ner_bert module<a class="headerlink" href="#module-lib.ner_bert.ner_bert" title="Permalink to this headline">¶</a></h2>
-<p>Apply multiple berts</p>
-<dl class="py class">
-<dt id="lib.ner_bert.ner_bert.MultipleBerts">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.ner_bert.ner_bert.</span></code><code class="sig-name descname"><span class="pre">MultipleBerts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">berts_to_use</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.ner_bert.MultipleBerts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Responsible for inference on multiple ner BERTS.</p>
-<dl class="py method">
-<dt id="lib.ner_bert.ner_bert.MultipleBerts.__call__">
-<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.ner_bert.MultipleBerts.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call self as a function.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.ner_bert.ner_bert.MultipleBerts.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">berts_to_use</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.ner_bert.MultipleBerts.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initializing the different BERT based models used for ner</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.ner_bert.ner_bert.MultipleBerts.draw_conclusion">
-<code class="sig-name descname"><span class="pre">draw_conclusion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.ner_bert.MultipleBerts.draw_conclusion" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.ner_bert.ner_bert.MultipleBerts.map_bert_entity_result">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">map_bert_entity_result</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_probabilities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">o_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bi_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.ner_bert.MultipleBerts.map_bert_entity_result" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.ner_bert.ner_bert.MultipleBerts.map_bert_results">
-<code class="sig-name descname"><span class="pre">map_bert_results</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_label_probabilities</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.ner_bert.MultipleBerts.map_bert_results" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.ner_bert.ner_bert.MultipleBerts.run_berts">
-<code class="sig-name descname"><span class="pre">run_berts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ner_sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.ner_bert.MultipleBerts.run_berts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Expects a list of lists with words. Per word return the probabilities if the different entities belonging to the
-specific model</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="section" id="lib-ner-bert-ner-bert-module">
+<h2>lib.ner_bert.ner_bert module<a class="headerlink" href="#lib-ner-bert-ner-bert-module" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

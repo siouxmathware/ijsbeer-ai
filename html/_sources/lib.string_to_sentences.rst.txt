@@ -1,0 +1,26 @@
+lib.string\_to\_sentences package
+=================================
+
+.. automodule:: lib.string_to_sentences
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+lib.string\_to\_sentences.replacer module
+-----------------------------------------
+
+.. automodule:: lib.string_to_sentences.replacer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+lib.string\_to\_sentences.string\_to\_sentences module
+------------------------------------------------------
+
+.. automodule:: lib.string_to_sentences.string_to_sentences
+   :members:
+   :undoc-members:
+   :show-inheritance:

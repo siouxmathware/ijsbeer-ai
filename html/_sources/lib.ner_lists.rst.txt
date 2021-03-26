@@ -9,10 +9,10 @@ lib.ner\_lists package
 Submodules
 ----------
 
-lib.ner\_lists.direct\_list\_creator module
--------------------------------------------
+lib.ner\_lists.direct\_finder module
+------------------------------------
 
-.. automodule:: lib.ner_lists.direct_list_creator
+.. automodule:: lib.ner_lists.direct_finder
    :members:
    :undoc-members:
    :show-inheritance:
@@ -25,26 +25,34 @@ lib.ner\_lists.entity module
    :undoc-members:
    :show-inheritance:
 
-lib.ner\_lists.find\_entities\_given\_direct\_list module
----------------------------------------------------------
+lib.ner\_lists.finder module
+----------------------------
 
-.. automodule:: lib.ner_lists.find_entities_given_direct_list
+.. automodule:: lib.ner_lists.finder
    :members:
    :undoc-members:
    :show-inheritance:
 
-lib.ner\_lists.find\_entities\_given\_tree module
--------------------------------------------------
+lib.ner\_lists.fuzzy\_finder module
+-----------------------------------
 
-.. automodule:: lib.ner_lists.find_entities_given_tree
+.. automodule:: lib.ner_lists.fuzzy_finder
    :members:
    :undoc-members:
    :show-inheritance:
 
-lib.ner\_lists.finders module
------------------------------
+lib.ner\_lists.fuzzy\_matcher module
+------------------------------------
 
-.. automodule:: lib.ner_lists.finders
+.. automodule:: lib.ner_lists.fuzzy_matcher
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+lib.ner\_lists.fuzzy\_permutative\_finder module
+------------------------------------------------
+
+.. automodule:: lib.ner_lists.fuzzy_permutative_finder
    :members:
    :undoc-members:
    :show-inheritance:
@@ -61,22 +69,6 @@ lib.ner\_lists.ner\_lists module
 --------------------------------
 
 .. automodule:: lib.ner_lists.ner_lists
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-lib.ner\_lists.tree\_creator module
------------------------------------
-
-.. automodule:: lib.ner_lists.tree_creator
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-lib.ner\_lists.tree\_matcher module
------------------------------------
-
-.. automodule:: lib.ner_lists.tree_matcher
    :members:
    :undoc-members:
    :show-inheritance:

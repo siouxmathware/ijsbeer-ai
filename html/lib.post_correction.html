@@ -16,6 +16,8 @@
 
   
   
+    <link rel="shortcut icon" href="_static/favicon-188b.png"/>
+  
 
   
   
@@ -38,6 +40,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="lib.string_to_sentences package" href="lib.string_to_sentences.html" />
     <link rel="prev" title="lib.ner_lists package" href="lib.ner_lists.html" /> 
 </head>
 
@@ -85,7 +88,6 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="lib.html">lib package</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="lib.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="lib.modernisation.html">lib.modernisation package</a></li>
@@ -95,18 +97,18 @@
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-lib.post_correction.freq_table_clean_up">lib.post_correction.freq_table_clean_up module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-lib.post_correction.post_correction">lib.post_correction.post_correction module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-lib.post_correction.replacer">lib.post_correction.replacer module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-lib.post_correction.string_to_sentences">lib.post_correction.string_to_sentences module</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="lib.string_to_sentences.html">lib.string_to_sentences package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.constants">lib.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-pipeline-module">lib.pipeline module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.schema">lib.schema module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 </ul>
 
             
@@ -187,17 +189,29 @@
 <dt id="lib.post_correction.freq_table_clean_up.FreqTableCleanUp">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.post_correction.freq_table_clean_up.</span></code><code class="sig-name descname"><span class="pre">FreqTableCleanUp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.freq_table_clean_up.FreqTableCleanUp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Class to load a pyspellchecker dictionary, dict, and cleaning up words with this dict.</p>
+<p>Loads a pyspellchecker dictionary and clean up words with this dict. Current implementation is only used for fixing
+transcription errors in the input. Using it to also improve modernisation of words has proven ineffective.</p>
 <dl class="py method">
 <dt id="lib.post_correction.freq_table_clean_up.FreqTableCleanUp.__call__">
-<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.freq_table_clean_up.FreqTableCleanUp.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call self as a function.</p>
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.freq_table_clean_up.FreqTableCleanUp.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>word_form</strong> (<em>str</em>) – The word form to clean, i.e. passing “Weerld!” could result in “Wereld!”</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>“cleaned” form of the word, i.e. a close match from the frequency table if that word is more likely.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="lib.post_correction.freq_table_clean_up.FreqTableCleanUp.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.freq_table_clean_up.FreqTableCleanUp.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>table_name</strong> (<em>str</em>) – Name of frequency table to use. Currently only post_correction is available.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -210,125 +224,55 @@
 - Fix mistakes made by OCR
 - Indicate per word if it is suitable for applying named entity recognition (ner)</p>
 <dl class="py class">
+<dt id="lib.post_correction.post_correction.DummyPostCorrection">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.post_correction.post_correction.</span></code><code class="sig-name descname"><span class="pre">DummyPostCorrection</span></code><a class="headerlink" href="#lib.post_correction.post_correction.DummyPostCorrection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>If no correction is required, the “post_correction” key must still be applies as it is used as the input for BERT.</p>
+<dl class="py method">
+<dt id="lib.post_correction.post_correction.DummyPostCorrection.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.post_correction.DummyPostCorrection.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sentences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – List of lists of words</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The sentences where each word has been provided with a “post_correction” key containing the <strong>same</strong>
+form of the word.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.post_correction.post_correction.DummyPostCorrection.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.post_correction.DummyPostCorrection.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empty initializer.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="lib.post_correction.post_correction.PostCorrection">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.post_correction.post_correction.</span></code><code class="sig-name descname"><span class="pre">PostCorrection</span></code><a class="headerlink" href="#lib.post_correction.post_correction.PostCorrection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Small class responible for post correction.</p>
+<p>Responible for the correction of mistakes by the Handwritten Text Recognition (HTR) input.</p>
 <dl class="py method">
 <dt id="lib.post_correction.post_correction.PostCorrection.__call__">
-<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.post_correction.PostCorrection.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Receives arbitrary text. Returns a list of lists of words object with format example:
-{</p>
-<blockquote>
-<div><p>‘word’: Hello,
-‘begin_char’: 3,
-‘end_char’: 8,
-‘ner’: True</p>
-</div></blockquote>
-<p>}
-Here begin/end char represents the original place inside text, can be used for locating this word. The ner key
-tells if this word should be used for named entity recognition.</p>
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.post_correction.PostCorrection.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sentences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – List of lists of words</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The sentences where each word has been provided with a “post_correction” key containing the corrected
+form of the word.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="lib.post_correction.post_correction.PostCorrection.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.post_correction.PostCorrection.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-lib.post_correction.replacer">
-<span id="lib-post-correction-replacer-module"></span><h2>lib.post_correction.replacer module<a class="headerlink" href="#module-lib.post_correction.replacer" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="lib.post_correction.replacer.Replacer">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.post_correction.replacer.</span></code><code class="sig-name descname"><span class="pre">Replacer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.replacer.Replacer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt id="lib.post_correction.replacer.Replacer.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.replacer.Replacer.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.replacer.Replacer.get_replacement_inputs">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_replacement_inputs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words_sub</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.replacer.Replacer.get_replacement_inputs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.replacer.Replacer.joinor">
-<code class="sig-name descname"><span class="pre">joinor</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.replacer.Replacer.joinor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.replacer.Replacer.replace_words">
-<code class="sig-name descname"><span class="pre">replace_words</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.replacer.Replacer.replace_words" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generic method to replace a sublist when it matches a pattern.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.replacer.Replacer.return_matches">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">return_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.replacer.Replacer.return_matches" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generic method to return the index of when a sublist matches a pattern.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.replacer.Replacer.splittor">
-<code class="sig-name descname"><span class="pre">splittor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.replacer.Replacer.splittor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-lib.post_correction.string_to_sentences">
-<span id="lib-post-correction-string-to-sentences-module"></span><h2>lib.post_correction.string_to_sentences module<a class="headerlink" href="#module-lib.post_correction.string_to_sentences" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="lib.post_correction.string_to_sentences.StringToSentences">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.post_correction.string_to_sentences.</span></code><code class="sig-name descname"><span class="pre">StringToSentences</span></code><a class="headerlink" href="#lib.post_correction.string_to_sentences.StringToSentences" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Converts a given string to a list of lists of dicts, see ner.py for final result form.</p>
-<dl class="py method">
-<dt id="lib.post_correction.string_to_sentences.StringToSentences.__call__">
-<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.string_to_sentences.StringToSentences.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns words divided over sentences.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.string_to_sentences.StringToSentences.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.string_to_sentences.StringToSentences.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.string_to_sentences.StringToSentences.get_list_of_dict_word_and_chars">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_list_of_dict_word_and_chars</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.string_to_sentences.StringToSentences.get_list_of_dict_word_and_chars" title="Permalink to this definition">¶</a></dt>
-<dd><p>Split the string into words where a word can be a normal word, but also a linebreak, space or any other special
-character.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.string_to_sentences.StringToSentences.line_word_splits">
-<code class="sig-name descname"><span class="pre">line_word_splits</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.string_to_sentences.StringToSentences.line_word_splits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deal with detectable word splits caused by line breaks. For applying ner and also do post correction
-or modernisation it is better to look at the whole word.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="lib.post_correction.string_to_sentences.StringToSentences.replacer">
-<code class="sig-name descname"><span class="pre">replacer</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;lib.post_correction.replacer.Replacer</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lib.post_correction.string_to_sentences.StringToSentences.replacer" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.string_to_sentences.StringToSentences.set_ner_flag">
-<code class="sig-name descname"><span class="pre">set_ner_flag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.string_to_sentences.StringToSentences.set_ner_flag" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set ner to False for words that match the NER (anti)pattern</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.post_correction.string_to_sentences.StringToSentences.split_in_sentences">
-<code class="sig-name descname"><span class="pre">split_in_sentences</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.post_correction.string_to_sentences.StringToSentences.split_in_sentences" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deal with the line breaks.</p>
+<dd><p>Initializes the class’ <code class="xref py py-class docutils literal notranslate"><span class="pre">FreqTableCleanUp</span></code> object</p>
 </dd></dl>
 
 </dd></dl>
@@ -342,6 +286,7 @@ or modernisation it is better to look at the whole word.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="lib.string_to_sentences.html" class="btn btn-neutral float-right" title="lib.string_to_sentences package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="lib.ner_lists.html" class="btn btn-neutral float-left" title="lib.ner_lists package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

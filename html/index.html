@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Welcome to ijsbeer-ai’s documentation! &mdash; ijsbeer-ai  documentation</title>
+  <title>Welcome to the documentation of the ijsbeer ai pipeline! &mdash; ijsbeer-ai  documentation</title>
   
 
   
@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="_static/favicon-188b.png"/>
   
 
   
@@ -38,7 +40,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="server package" href="server.html" /> 
+    <link rel="next" title="lib package" href="lib.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,8 +87,8 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lib.html">lib package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
 </ul>
 
             
@@ -135,7 +137,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Welcome to ijsbeer-ai’s documentation!</li>
+      <li>Welcome to the documentation of the ijsbeer ai pipeline!</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -154,26 +156,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-ijsbeer-ai-s-documentation">
-<h1>Welcome to ijsbeer-ai’s documentation!<a class="headerlink" href="#welcome-to-ijsbeer-ai-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-the-documentation-of-the-ijsbeer-ai-pipeline">
+<h1>Welcome to the documentation of the ijsbeer ai pipeline!<a class="headerlink" href="#welcome-to-the-documentation-of-the-ijsbeer-ai-pipeline" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of the ijsbeer ai pipeline is to enrich historical Dutch texts with useful data.
+This consists of four separate modules:</p>
+<ol class="arabic simple">
+<li><p>String-to-sentence: split input string into words</p></li>
+<li><p>Post-correction:  Correct any presumed mistakes in the HTR for each word.</p></li>
+<li><p>Named Entity Recognition (NER) using BERT.</p></li>
+<li><p>Named Entity Recognition (NER) using lists. This can be defined to only search within the results of the NER BERT.</p></li>
+<li><p>Modernisation of the words. This step is done last so that found entities can be skipped.</p></li>
+</ol>
+<p>Each of these steps is documented in more detail in the corresponding subpackage of the <a class="reference internal" href="lib.html#module-lib"><span class="std std-ref">lib package</span></a> documentation.</p>
+<div class="section" id="typical-usage">
+<h2>Typical usage<a class="headerlink" href="#typical-usage" title="Permalink to this headline">¶</a></h2>
+<p>The intended use of this pipeline is that it is containerised and called via POST-requests to the server.
+More details on this interface are given in the <a class="reference internal" href="server.html#module-server"><span class="std std-ref">server package</span></a> documentation.
+Below we present a number of examples of server calls as they might be used by a user of this pipeline.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">server_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="n">URL</span> <span class="o">+</span> <span class="s1">&#39;pipeline&#39;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_data&quot;</span><span class="p">:</span> <span class="s2">&quot;Brieven van Cornelis Lardijn, Eindhoven, 25 maart 2021&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">full_json</span> <span class="o">=</span> <span class="n">server_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">full_json</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">==</span><span class="s1">&#39;Success&#39;</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html#module-server.exceptions">server.exceptions module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html#module-server.flask_server">server.flask_server module</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="lib.html">lib package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.constants">lib.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-pipeline-module">lib.pipeline module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.schema">lib.schema module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">server package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="server.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#module-server.exceptions">server.exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#server-flask-server-module">server.flask_server module</a></li>
 </ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
@@ -191,7 +217,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="server.html" class="btn btn-neutral float-right" title="server package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lib.html" class="btn btn-neutral float-right" title="lib package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
