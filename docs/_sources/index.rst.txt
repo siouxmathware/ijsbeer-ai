@@ -20,17 +20,143 @@ Typical usage
 -------------
 
 The intended use of this pipeline is that it is containerised and called via POST-requests to the server.
-More details on this interface are given in the :ref:`server package` documentation.
 Below we present a number of examples of server calls as they might be used by a user of this pipeline.
+The examples are presented by calls from Python, but can easily be implemented in whatever language the user wants.
+
+First, we import the `requests` package in Python and specify the URL for our host.
+
+.. code-block:: python
+
+    import requests
+    URL = "http://0.0.0.0:5002/
+
+A "default" call executes all steps in the pipeline.
+
+.. code-block:: python
+
+
+    server_response = requests.post(
+        url=URL + 'pipeline',
+        json={"input_data": "Brieven van Cornelis Lardijn, Eijndhoven, 25 maart 2021"}
+    )
+    full_json = server_response.json()
+
+This would produce an output like (where most entried have been omited for clarity)
+
+.. code-block:: JSON
+
+    {
+      "message": "Success",
+      "results": [
+        [
+          {},
+          {
+            "begin_char": 30,
+            "bio": "B-location",
+            "end_char": 40,
+            "entity_chars": [
+              [
+                30,
+                41
+              ]
+            ],
+            "labels": {
+              "BERT": {
+                "date": {
+                  "bio": "O",
+                  "label_probabilities": {
+                    "<PAD>": 0.0021120477467775345,
+                    "B": 0.002442566677927971,
+                    "I": 0.001100641442462802,
+                    "O": 0.008404848165810108
+                  }
+                },
+                "location": {
+                  "bio": "B",
+                  "label_probabilities": {
+                    "<PAD>": 0.0021120477467775345,
+                    "B": 0.946304202079773,
+                    "I": 0.001456045312806964,
+                    "O": 0.008404848165810108
+                  }
+                },
+                "person": {
+                  "bio": "O",
+                  "label_probabilities": {
+                    "<PAD>": 0.0021120477467775345,
+                    "B": 0.036251552402973175,
+                    "I": 0.001928190584294498,
+                    "O": 0.008404848165810108
+                  }
+                }
+              },
+              "lists": []
+            },
+            "modernisation": "Eijndhoven,",
+            "ner": true,
+            "post_correction": "Eijndhoven,",
+            "remove_whitespace_for_modernisation": false,
+            "word": "Eijndhoven,"
+          },
+          {}
+        ]
+      ]
+    }
+
+If desired, the pipeline can be limited to only using a number of steps, e.g.
+
+.. code-block:: python
+
+    import requests
+    URL = "http://0.0.0.0:5002/
+    server_response = requests.post(
+        url=URL + 'pipeline',
+        json={"input_data": "Brieven van Cornelis Lardijn, Eijndhoven, 25 maart 2021"}
+    )
+    full_json = server_response.json()
+
+Results in
+
+.. code-block:: JSON
+
+    {
+      "message": "Success",
+      "results": [
+        [
+            {},
+            {
+              "begin_char": 30,
+              "end_char": 41,
+              "modernisation": "Eindhoven,",
+              "ner": true,
+              "post_correction": "Eijndhoven,",
+              "remove_whitespace_for_modernisation": false,
+              "word": "Eijndhoven,"
+            },
+            {}
+            ]
+        ]
+    }
+
+Note that because BERT was not used, the named Entity "Eindhoven" *is* modernized in this example, where it was not before.
+
+If the :class:`string_to_sentences <lib.string_to_sentences.StringToSentences>` is not called by the pipeline,
+the input must be provided in terms of a list of lists of dicts, as usually output by :class:`string_to_sentences <lib.string_to_sentences.StringToSentences>`.
+This can be useful if performing a step separate from others. In the example below,
+we use the result from above and only call :class:`ner_bert <lib.ner_bert.MultipleBerts>` on the result.
 
 .. code-block:: python
 
     server_response = requests.post(
-        url=URL + 'pipeline',
-        json={"input_data": "Brieven van Cornelis Lardijn, Eindhoven, 25 maart 2021"}
+        url=URL + "pipeline",
+        json={
+            "input_data": full_json["results"],
+            "steps": ["ner_bert"]
+        }
     )
-    full_json = server_response.json()
-    assert full_json['message'] =='Success'
+    server_response.json()
+
+More details on this interface are given in the :ref:`server package` documentation.
 
 .. toctree::
    :maxdepth: 2

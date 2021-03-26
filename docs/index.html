@@ -171,16 +171,128 @@ This consists of four separate modules:</p>
 <div class="section" id="typical-usage">
 <h2>Typical usage<a class="headerlink" href="#typical-usage" title="Permalink to this headline">¶</a></h2>
 <p>The intended use of this pipeline is that it is containerised and called via POST-requests to the server.
-More details on this interface are given in the <a class="reference internal" href="server.html#module-server"><span class="std std-ref">server package</span></a> documentation.
-Below we present a number of examples of server calls as they might be used by a user of this pipeline.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">server_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="n">URL</span> <span class="o">+</span> <span class="s1">&#39;pipeline&#39;</span><span class="p">,</span>
-    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_data&quot;</span><span class="p">:</span> <span class="s2">&quot;Brieven van Cornelis Lardijn, Eindhoven, 25 maart 2021&quot;</span><span class="p">}</span>
-<span class="p">)</span>
-<span class="n">full_json</span> <span class="o">=</span> <span class="n">server_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="k">assert</span> <span class="n">full_json</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">==</span><span class="s1">&#39;Success&#39;</span>
+Below we present a number of examples of server calls as they might be used by a user of this pipeline.
+The examples are presented by calls from Python, but can easily be implemented in whatever language the user wants.</p>
+<p>First, we import the <cite>requests</cite> package in Python and specify the URL for our host.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s2">&quot;http://0.0.0.0:5002/</span>
 </pre></div>
 </div>
+<p>A “default” call executes all steps in the pipeline.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">server_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="n">URL</span> <span class="o">+</span> <span class="s1">&#39;pipeline&#39;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_data&quot;</span><span class="p">:</span> <span class="s2">&quot;Brieven van Cornelis Lardijn, Eijndhoven, 25 maart 2021&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">full_json</span> <span class="o">=</span> <span class="n">server_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This would produce an output like (where most entried have been omited for clarity)</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span>
+      <span class="p">{},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;begin_char&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="nt">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;B-location&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;end_char&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="nt">&quot;entity_chars&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">[</span>
+            <span class="mi">30</span><span class="p">,</span>
+            <span class="mi">41</span>
+          <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;labels&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;BERT&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span> <span class="mf">0.0021120477467775345</span><span class="p">,</span>
+                <span class="nt">&quot;B&quot;</span><span class="p">:</span> <span class="mf">0.002442566677927971</span><span class="p">,</span>
+                <span class="nt">&quot;I&quot;</span><span class="p">:</span> <span class="mf">0.001100641442462802</span><span class="p">,</span>
+                <span class="nt">&quot;O&quot;</span><span class="p">:</span> <span class="mf">0.008404848165810108</span>
+              <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span> <span class="mf">0.0021120477467775345</span><span class="p">,</span>
+                <span class="nt">&quot;B&quot;</span><span class="p">:</span> <span class="mf">0.946304202079773</span><span class="p">,</span>
+                <span class="nt">&quot;I&quot;</span><span class="p">:</span> <span class="mf">0.001456045312806964</span><span class="p">,</span>
+                <span class="nt">&quot;O&quot;</span><span class="p">:</span> <span class="mf">0.008404848165810108</span>
+              <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;person&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span> <span class="mf">0.0021120477467775345</span><span class="p">,</span>
+                <span class="nt">&quot;B&quot;</span><span class="p">:</span> <span class="mf">0.036251552402973175</span><span class="p">,</span>
+                <span class="nt">&quot;I&quot;</span><span class="p">:</span> <span class="mf">0.001928190584294498</span><span class="p">,</span>
+                <span class="nt">&quot;O&quot;</span><span class="p">:</span> <span class="mf">0.008404848165810108</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;lists&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;modernisation&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;ner&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;post_correction&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;remove_whitespace_for_modernisation&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{}</span>
+    <span class="p">]</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If desired, the pipeline can be limited to only using a number of steps, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s2">&quot;http://0.0.0.0:5002/</span>
+<span class="n">server_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="n">URL</span> <span class="o">+</span> <span class="s1">&#39;pipeline&#39;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_data&quot;</span><span class="p">:</span> <span class="s2">&quot;Brieven van Cornelis Lardijn, Eijndhoven, 25 maart 2021&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">full_json</span> <span class="o">=</span> <span class="n">server_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Results in</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span>
+        <span class="p">{},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;begin_char&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+          <span class="nt">&quot;end_char&quot;</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+          <span class="nt">&quot;modernisation&quot;</span><span class="p">:</span> <span class="s2">&quot;Eindhoven,&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;ner&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;post_correction&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;remove_whitespace_for_modernisation&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{}</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that because BERT was not used, the named Entity “Eindhoven” <em>is</em> modernized in this example, where it was not before.</p>
+<p>If the <code class="xref py py-class docutils literal notranslate"><span class="pre">string_to_sentences</span></code> is not called by the pipeline,
+the input must be provided in terms of a list of lists of dicts, as usually output by <code class="xref py py-class docutils literal notranslate"><span class="pre">string_to_sentences</span></code>.
+This can be useful if performing a step separate from others. In the example below,
+we use the result from above and only call <code class="xref py py-class docutils literal notranslate"><span class="pre">ner_bert</span></code> on the result.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">server_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="n">URL</span> <span class="o">+</span> <span class="s2">&quot;pipeline&quot;</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;input_data&quot;</span><span class="p">:</span> <span class="n">full_json</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ner_bert&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">server_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>More details on this interface are given in the <a class="reference internal" href="server.html#module-server"><span class="std std-ref">server package</span></a> documentation.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
