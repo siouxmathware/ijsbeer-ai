@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>lib package &mdash; ijsbeer-ai  documentation</title>
@@ -86,7 +87,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">lib package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
@@ -99,8 +100,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-lib.constants">lib.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lib-pipeline-module">lib.pipeline module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-lib.schema">lib.schema module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lib-schema-module">lib.schema module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
@@ -171,9 +172,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-lib">
+  <section id="module-lib">
 <span id="lib-package"></span><h1>lib package<a class="headerlink" href="#module-lib" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="subpackages">
+<section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -205,8 +206,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lib.post_correction.html">lib.post_correction package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#module-lib.post_correction.freq_table_clean_up">lib.post_correction.freq_table_clean_up module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#module-lib.post_correction.post_correction">lib.post_correction.post_correction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#lib-post-correction-freq-table-clean-up-module">lib.post_correction.freq_table_clean_up module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#lib-post-correction-post-correction-module">lib.post_correction.post_correction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.post_correction.html#lib-post-correction-spellchecker-local-module">lib.post_correction.spellchecker_local module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lib.string_to_sentences.html">lib.string_to_sentences package</a><ul>
@@ -217,76 +219,127 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="submodules">
+</section>
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-lib.constants">
+</section>
+<section id="module-lib.constants">
 <span id="lib-constants-module"></span><h2>lib.constants module<a class="headerlink" href="#module-lib.constants" title="Permalink to this headline">¶</a></h2>
 <p>This module provides common constants to various other (sub)modules.</p>
 <p>In particular the location of the data is defined here in a single location. The definition is always used dynamically
 so that it may be overridden by tests, which are performed on smaller datasets.</p>
-</div>
-<div class="section" id="lib-pipeline-module">
-<h2>lib.pipeline module<a class="headerlink" href="#lib-pipeline-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-lib.schema">
-<span id="lib-schema-module"></span><h2>lib.schema module<a class="headerlink" href="#module-lib.schema" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-lib.pipeline">
+<span id="lib-pipeline-module"></span><h2>lib.pipeline module<a class="headerlink" href="#module-lib.pipeline" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="lib.schema.Validator">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.schema.</span></code><code class="sig-name descname"><span class="pre">Validator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.schema.Validator" title="Permalink to this definition">¶</a></dt>
+<dt id="lib.pipeline.Pipeline">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.pipeline.</span></code><code class="sig-name descname"><span class="pre">Pipeline</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pipeline.Pipeline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Valicator class that allows validating (partial) results of the pipeline.
-The schema used is given by <a class="reference download internal" download="" href="_downloads/9eb3b3cd707153332e0fca6a4c018e03/format.schema.json"><code class="xref download docutils literal notranslate"><span class="pre">format.schema.json</span></code></a>.
-Currently only used during testing due to possible performance impact during production.</p>
-<p>TODO: Make the validator available via the API.</p>
-<dl class="py attribute">
-<dt id="lib.schema.Validator.IGNORABLE">
-<code class="sig-name descname"><span class="pre">IGNORABLE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">('post_correction',</span> <span class="pre">'ner_bert',</span> <span class="pre">'ner_lists',</span> <span class="pre">'modernisation')</span></em><a class="headerlink" href="#lib.schema.Validator.IGNORABLE" title="Permalink to this definition">¶</a></dt>
+<p>Responsible for the whole AI pipeline:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="lib.string_to_sentences.html#module-lib.string_to_sentences.string_to_sentences" title="lib.string_to_sentences.string_to_sentences"><code class="xref py py-mod docutils literal notranslate"><span class="pre">String</span> <span class="pre">to</span> <span class="pre">sentences</span></code></a></p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">Post-correction</span></code></p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">NER</span> <span class="pre">using</span> <span class="pre">BERT</span></code></p></li>
+<li><p><a class="reference internal" href="lib.ner_lists.html#module-lib.ner_lists.ner_lists" title="lib.ner_lists.ner_lists"><code class="xref py py-mod docutils literal notranslate"><span class="pre">NER</span> <span class="pre">using</span> <span class="pre">lists</span></code></a></p></li>
+<li><p><a class="reference internal" href="lib.modernisation.html#module-lib.modernisation.modernisation" title="lib.modernisation.modernisation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">Modernisation</span></code></a>
+(performed last so that named entities can be exempted from modernisation</p></li>
+</ol>
+<dl class="py method">
+<dt id="lib.pipeline.Pipeline.__call__">
+<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pipeline.Pipeline.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_data</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]]) – <p>Either a string of historical Dutch text, if the step “string_to_sentences” is involved,
+or a dictionary corresponding to the <a class="reference download internal" download="" href="_downloads/9eb3b3cd707153332e0fca6a4c018e03/format.schema.json"><code class="xref download docutils literal notranslate"><span class="pre">json</span> <span class="pre">schema</span></code></a> if it is not.
+The format of the input data in the latter case should correspond to some extent to the remaining steps that
+are to be executed. The table below provides an overview of which steps are required and/or prefered to
+have  been executed for each subsequent step. A required step must either be executed in the same call to
+the pipeline, or the results of that step must be present in the input data.</p>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">Dependency on previous steps</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Step - requires</p></th>
+<th class="head"><p>STS</p></th>
+<th class="head"><p>PC</p></th>
+<th class="head"><p>BERT</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Post-correction</p></td>
+<td><p>yes</p></td>
+<td><ul>
+<li></li>
+</ul>
+</td>
+<td><ul>
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NER using BERT</p></td>
+<td><p>yes</p></td>
+<td><p>yes <a class="footnote-reference brackets" href="#id6" id="id1">1</a></p></td>
+<td><ul>
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>NER using Lists</p></td>
+<td><p>yes</p></td>
+<td><p>yes <a class="footnote-reference brackets" href="#id6" id="id2">1</a></p></td>
+<td><p>depends <a class="footnote-reference brackets" href="#id7" id="id3">2</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Modernisation</p></td>
+<td><p>yes</p></td>
+<td><p>yes <a class="footnote-reference brackets" href="#id6" id="id4">1</a></p></td>
+<td><p>preferably <a class="footnote-reference brackets" href="#id8" id="id5">3</a></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id4">3</a>)</span></dt>
+<dd><p>This behaviour is subject to change. If processing ground truth texts, the post-correction step
+should be skipped. Skipping this step altogether, however, results in the absence of the
+“post_correction” key on which subsequent steps rely.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Depending on the configuration for the project at hand, the lists are only searched to match entities
+found by BERT. For such a project, e.g. SZSA, the BERT step is a prerequisite for the lists step.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>The modernisation is configured to leave certain found entities unchanged. This is only possible if</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>steps</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]]) – Which steps to execute within this call to the pipelines</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dict with a format according to <cite>lib.schema (format.schema.json)</cite> Depending on which parts of the
+pipeline are called, the required input and expected output will be different.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lib.pipeline.Pipeline.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pipeline.Pipeline.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt id="lib.schema.Validator.__call__">
-<code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.schema.Validator.__call__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>json_data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – Pipeline output data that is to be verified against the schema.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None, exception is raised if validation fails.</p>
-</dd>
-</dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="lib.schema.Validator.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.schema.Validator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ignore</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>) – Which steps to ignore in the validation, should be one of
-<a class="reference internal" href="#lib.schema.Validator.IGNORABLE" title="lib.schema.Validator.IGNORABLE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">IGNORABLE</span></code></a>.
-Useful when calling only a subset of all possible steps of the pipeline.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="lib.schema.Validator.from_include">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_include</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.schema.Validator.from_include" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>include</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>]) – Which steps to include. If <cite>None</cite> (default) all steps will be included.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Instance of the Validator that considers only the specified steps.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-</div>
+</section>
+<section id="lib-schema-module">
+<h2>lib.schema module<a class="headerlink" href="#lib-schema-module" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
 
 
            </div>

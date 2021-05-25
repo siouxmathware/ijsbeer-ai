@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>lib.string_to_sentences package &mdash; ijsbeer-ai  documentation</title>
@@ -86,7 +87,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="lib.html">lib package</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="lib.html#subpackages">Subpackages</a><ul class="current">
@@ -104,8 +105,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.constants">lib.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-pipeline-module">lib.pipeline module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.schema">lib.schema module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-schema-module">lib.schema module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
@@ -178,12 +179,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-lib.string_to_sentences">
+  <section id="module-lib.string_to_sentences">
 <span id="lib-string-to-sentences-package"></span><h1>lib.string_to_sentences package<a class="headerlink" href="#module-lib.string_to_sentences" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-lib.string_to_sentences.replacer">
+</section>
+<section id="module-lib.string_to_sentences.replacer">
 <span id="lib-string-to-sentences-replacer-module"></span><h2>lib.string_to_sentences.replacer module<a class="headerlink" href="#module-lib.string_to_sentences.replacer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="lib.string_to_sentences.replacer.Replacer">
@@ -287,12 +288,12 @@ different words. To be used as an input for
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-lib.string_to_sentences.string_to_sentences">
+</section>
+<section id="module-lib.string_to_sentences.string_to_sentences">
 <span id="lib-string-to-sentences-string-to-sentences-module"></span><h2>lib.string_to_sentences.string_to_sentences module<a class="headerlink" href="#module-lib.string_to_sentences.string_to_sentences" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="lib.string_to_sentences.string_to_sentences.StringToSentences">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.string_to_sentences.string_to_sentences.</span></code><code class="sig-name descname"><span class="pre">StringToSentences</span></code><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">lib.string_to_sentences.string_to_sentences.</span></code><code class="sig-name descname"><span class="pre">StringToSentences</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Converts a given string to a list of lists of dicts, see
 <a class="reference internal" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.__call__" title="lib.string_to_sentences.string_to_sentences.StringToSentences.__call__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__call__</span></code></a> for final result form.</p>
@@ -319,9 +320,18 @@ The “ner” key tells if this word should be used for named entity recognition
 
 <dl class="py method">
 <dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.__init__">
-<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>_</strong> – Unused kwarg argument, included for symmetry with the other pipeline steps.</p>
+</dd>
+</dl>
 </dd></dl>
+
+<dl class="py method">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.compile_line_word_split_patterns">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">compile_line_word_split_patterns</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.compile_line_word_split_patterns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.get_list_of_dict_word_and_chars">
@@ -330,12 +340,22 @@ The “ner” key tells if this word should be used for named entity recognition
 character.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.last_word_regex">
+<code class="sig-name descname"><span class="pre">last_word_regex</span></code><em class="property"> <span class="pre">=</span> <span class="pre">re.compile('(^[^</span> <span class="pre">]+[a-z])([.!?]$)')</span></em><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.last_word_regex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.line_word_splits">
 <code class="sig-name descname"><span class="pre">line_word_splits</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.line_word_splits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deal with detectable word splits caused by line breaks. For applying ner and also do post correction
 or modernisation it is better to look at the whole word.</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.ner_pattern">
+<code class="sig-name descname"><span class="pre">ner_pattern</span></code><em class="property"> <span class="pre">=</span> <span class="pre">re.compile('(^[^a-zA-Z0-9:;.,?!&quot;’\'`]$)')</span></em><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.ner_pattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.replacer">
@@ -354,10 +374,15 @@ or modernisation it is better to look at the whole word.</p>
 <dd><p>Deal with the line breaks.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.split_rule">
+<code class="sig-name descname"><span class="pre">split_rule</span></code><em class="property"> <span class="pre">=</span> <span class="pre">re.compile('([</span> <span class="pre">\n])')</span></em><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.split_rule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -17,10 +17,26 @@ server.exceptions module
    :undoc-members:
    :show-inheritance:
 
+server.fast\_server module
+--------------------------
+
+.. automodule:: server.fast_server
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 server.flask\_server module
 ---------------------------
 
 .. automodule:: server.flask_server
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+server.parallel\_support module
+-------------------------------
+
+.. automodule:: server.parallel_support
    :members:
    :undoc-members:
    :show-inheritance:

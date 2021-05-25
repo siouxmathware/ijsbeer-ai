@@ -24,3 +24,11 @@ lib.post\_correction.post\_correction module
    :members:
    :undoc-members:
    :show-inheritance:
+
+lib.post\_correction.spellchecker\_local module
+-----------------------------------------------
+
+.. automodule:: lib.post_correction.spellchecker_local
+   :members:
+   :undoc-members:
+   :show-inheritance:

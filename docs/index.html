@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Welcome to the documentation of the ijsbeer ai pipeline! &mdash; ijsbeer-ai  documentation</title>
@@ -85,7 +86,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lib.html">lib package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">server package</a></li>
@@ -156,7 +157,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-the-documentation-of-the-ijsbeer-ai-pipeline">
+  <section id="welcome-to-the-documentation-of-the-ijsbeer-ai-pipeline">
 <h1>Welcome to the documentation of the ijsbeer ai pipeline!<a class="headerlink" href="#welcome-to-the-documentation-of-the-ijsbeer-ai-pipeline" title="Permalink to this headline">¶</a></h1>
 <p>The purpose of the ijsbeer ai pipeline is to enrich historical Dutch texts with useful data.
 This consists of four separate modules:</p>
@@ -168,7 +169,7 @@ This consists of four separate modules:</p>
 <li><p>Modernisation of the words. This step is done last so that found entities can be skipped.</p></li>
 </ol>
 <p>Each of these steps is documented in more detail in the corresponding subpackage of the <a class="reference internal" href="lib.html#module-lib"><span class="std std-ref">lib package</span></a> documentation.</p>
-<div class="section" id="typical-usage">
+<section id="typical-usage">
 <h2>Typical usage<a class="headerlink" href="#typical-usage" title="Permalink to this headline">¶</a></h2>
 <p>The intended use of this pipeline is that it is containerised and called via POST-requests to the server.
 Below we present a number of examples of server calls as they might be used by a user of this pipeline.
@@ -294,34 +295,36 @@ we use the result from above and only call <code class="xref py py-class docutil
 </div>
 <p>More details on this interface are given in the <a class="reference internal" href="server.html#module-server"><span class="std std-ref">server package</span></a> documentation.</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lib.html">lib package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#subpackages">Subpackages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.constants">lib.constants module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-pipeline-module">lib.pipeline module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.schema">lib.schema module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#module-lib.pipeline">lib.pipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html#lib-schema-module">lib.schema module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="server.html">server package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="server.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="server.html#module-server.exceptions">server.exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#server-fast-server-module">server.fast_server module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="server.html#server-flask-server-module">server.flask_server module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#module-server.parallel_support">server.parallel_support module</a></li>
 </ul>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
+</section>
+</section>
+<section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
+</section>
 
 
            </div>
