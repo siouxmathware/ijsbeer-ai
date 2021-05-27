@@ -1,0 +1,85 @@
+[
+  [
+    {
+      "word": "batauia",
+      "post_correction": "batavia",
+      "modernisation": "batavia",
+      "remove_whitespace_for_modernisation": false,
+      "begin_char": 23,
+      "end_char": 30,
+      "ner": true,
+      "labels": {
+        "BERT": {
+          "location": {
+            "bio": "B",
+            "label_probabilities": {
+              "<PAD>": 0,
+              "O": 0.02,
+              "B": 0.92,
+              "I": 0.06
+            }
+          },
+          "person": {
+            "bio": "O",
+            "label_probabilities": {
+              "<PAD>": 0,
+              "O": 0.83,
+              "B": 0.12,
+              "I": 0.05
+            }
+          },
+          "date": {
+            "bio": "O",
+            "label_probabilities": {
+              "<PAD>": 0,
+              "O": 0.70,
+              "B": 0.12,
+              "I": 0.18
+            }
+          }
+        },
+          "lists": [
+            {
+			  "list_name": "straatnamenhaarlem",
+              "bio": "O",
+              "score": 0.81
+            },
+			{
+              "list_name": "straatnamen_Amsterdam",
+			  "bio": "I",
+			  "score": 0.90909090909,
+			  "canonical_form": "Eerste Kostverlorenkade",
+              "extra_attributes": {
+				"settlement": "Amsterdam",
+				"country": "Nederland"
+			  },
+			  "geometry": {
+                "type": "Point",
+                "coordinates": [4.8727126156247,52.378273663571]
+              },
+              "location_ids": {
+                "adamlink_url": "https://adamlink.nl/geo/street/eerste-kostverlorenkade/1185,http://www.wikidata.org/entity/Q19061435"
+              }
+            },
+			{
+              "list_name": "straatnamen_Amsterdam",
+			  "bio": "I",
+			  "score": 0.90909090909,
+			  "canonical_form": "Tweede Kostverlorenkade",
+              "extra_attributes": {
+				"settlement": "Diemen",
+				"country": "Nederland"
+			  },
+			  "geometry": {
+                "type": "Point",
+                "coordinates": [4.8727126156247,52.378273663571]
+              },
+              "location_ids": {
+                "adamlink_url": "https://adamlink.nl/geo/street/eerste-kostverlorenkade/1185,http://www.wikidata.org/entity/Q19061435"
+              }
+            }
+          ]
+      }
+    }
+  ]
+]
