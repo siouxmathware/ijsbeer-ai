@@ -1,0 +1,6 @@
+# Line-word split types
+# Either has a line-braking character such as „- before or after a line-break.
+# Possibly there is one on both side (which will be matched by either regex)
+# There is also optionally a space before or after the linebreak
+^(.+[a-zA-Z])[„-]? ?\n[„-]([a-zA-Z].+)$@\1\2\n
+^(.+[a-zA-Z])[„-]\n ?[„-]?([a-zA-Z].+)$@\1\2\n
