@@ -1,0 +1,358 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "BERT_label": {
+      "type": "object",
+      "properties": {
+        "bio": {
+          "type": "string",
+          "enum": [
+            "B",
+            "I",
+            "O"
+          ]
+        },
+        "label_probabilities": {
+          "type": "object",
+          "properties": {
+            "<PAD>": {
+              "type": "number"
+            },
+            "B": {
+              "type": "number"
+            },
+            "I": {
+              "type": "number"
+            },
+            "O": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "<PAD>",
+            "B",
+            "I",
+            "O"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "bio",
+        "label_probabilities"
+      ],
+      "additionalProperties": false
+    },
+    "list_label": {
+      "type": "object",
+      "properties": {
+        "list_name": {
+          "description": "name of list-file (without extension) where it is found",
+          "type": "string"
+        },
+        "searchable": {
+          "description": "lower case word(s) that has been found a match with",
+          "type": "string"
+        },
+        "bio": {
+          "type": "string",
+          "enum": [
+            "B",
+            "I",
+            "O"
+          ]
+        },
+        "score": {
+          "description": "Score of how close the (lower case) word matches to the (lower case) searchable-form, 1 = exact.",
+          "type": "number"
+        },
+        "canonical_form": {
+          "type": "string"
+        },
+        "geometry": {
+          "$ref": "#/definitions/geometry"
+        },
+        "extra_attributes": {
+          "type": "object",
+          "description": "place to leave extra properties, such as settlement/region/country/begin_year_min",
+          "additionalProperties": true
+        },
+        "location_ids": {
+          "type": "object",
+          "properties": {
+            "bag_id": {
+              "type": "string"
+            },
+            "geonames_url": {
+              "type": "string"
+            },
+            "adamlink_url": {
+              "type": "string"
+            },
+            "wikidata_url": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "bio",
+        "list_name"
+      ],
+      "additionalProperties": false
+    },
+    "labels": {
+      "type": "object",
+      "properties": {
+        "BERT": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "$ref": "#/definitions/BERT_label"
+            },
+            "person": {
+              "$ref": "#/definitions/BERT_label"
+            },
+            "date": {
+              "$ref": "#/definitions/BERT_label"
+            }
+          },
+          "required": [
+            "location",
+            "person",
+            "date"
+          ],
+          "additionalProperties": false
+        },
+        "lists": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/list_label"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "BERT",
+        "lists"
+      ],
+      "additionalProperties": false
+    },
+    "word": {
+      "type": "object",
+      "properties": {
+        "word": {
+          "type": "string"
+        },
+        "post_correction": {
+          "type": "string"
+        },
+        "modernisation": {
+          "type": "string"
+        },
+        "remove_whitespace_for_modernisation": {
+          "type": "boolean"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "entity_chars": {
+          "type": "array",
+          "items": {
+            "items": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          }
+        },
+        "begin_char": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "end_char": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ner": {
+          "type": "boolean"
+        },
+        "labels": {
+          "$ref": "#/definitions/labels"
+        }
+      },
+      "required": [
+        "word",
+        "post_correction",
+        "modernisation",
+        "remove_whitespace_for_modernisation",
+        "begin_char",
+        "end_char",
+        "ner"
+      ],
+      "additionalProperties": false
+    },
+    "geometry": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "id": "http://json-schema.org/geojson/geometry.json#",
+      "title": "geometry",
+      "description": "One geometry as defined by GeoJSON",
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "oneOf": [
+        {
+          "title": "Point",
+          "properties": {
+            "type": {
+              "enum": [
+                "Point"
+              ]
+            },
+            "coordinates": {
+              "$ref": "#/definitions/position"
+            }
+          }
+        },
+        {
+          "title": "MultiPoint",
+          "properties": {
+            "type": {
+              "enum": [
+                "MultiPoint"
+              ]
+            },
+            "coordinates": {
+              "$ref": "#/definitions/positionArray"
+            }
+          }
+        },
+        {
+          "title": "LineString",
+          "properties": {
+            "type": {
+              "enum": [
+                "LineString"
+              ]
+            },
+            "coordinates": {
+              "$ref": "#/definitions/lineString"
+            }
+          }
+        },
+        {
+          "title": "MultiLineString",
+          "properties": {
+            "type": {
+              "enum": [
+                "MultiLineString"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/lineString"
+              }
+            }
+          }
+        },
+        {
+          "title": "Polygon",
+          "properties": {
+            "type": {
+              "enum": [
+                "Polygon"
+              ]
+            },
+            "coordinates": {
+              "$ref": "#/definitions/polygon"
+            }
+          }
+        },
+        {
+          "title": "MultiPolygon",
+          "properties": {
+            "type": {
+              "enum": [
+                "MultiPolygon"
+              ]
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/polygon"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "position": {
+      "description": "A single position",
+      "type": "array",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "additionalItems": false
+    },
+    "positionArray": {
+      "description": "An array of positions",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/position"
+      }
+    },
+    "lineString": {
+      "description": "An array of two or more positions",
+      "allOf": [
+        {
+          "$ref": "#/definitions/positionArray"
+        },
+        {
+          "minItems": 2
+        }
+      ]
+    },
+    "linearRing": {
+      "description": "An array of four positions where the first equals the last",
+      "allOf": [
+        {
+          "$ref": "#/definitions/positionArray"
+        },
+        {
+          "minItems": 4
+        }
+      ]
+    },
+    "polygon": {
+      "description": "An array of linear rings",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/linearRing"
+      }
+    }
+  },
+  "type": "array",
+  "items": {
+    "type": "array",
+    "items": {
+      "$ref": "#/definitions/word"
+    }
+  }
+}
