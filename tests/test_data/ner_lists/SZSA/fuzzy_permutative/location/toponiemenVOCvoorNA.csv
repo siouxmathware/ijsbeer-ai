@@ -1,0 +1,9 @@
+",ID,PlaatsHerkomst,standardizedToponym,countryCode,""source (1:ErfGeoVOCOPV, 2:ErfGeoPoorter, 3:Huygens; 4:SonttolProject; 5:TonVanVelzen)"",URI,LAT,LNG,Country/Region,TonVanVelzenPlaats,TonVanVelzenLandcode"
+not_used,not_used,searchable,canonical_form,not_used,not_used,geonames_URI,latitude,longitude,not_used,not_used,not_used
+20834,HuygensVOCTOP_020835,Cabo de goede hoop,Cape of Good Hope,ZA,3.0,http://sws.geonames.org/3367577/,-34.35027,18.47909,,,
+10143,HuygensVOCTOP_010144,Batavia,Jakarta,ID,4.0,http://sws.geonames.org/1642911/,-6.21462,106.84513,,,
+150164,HuygensVOCTOP_150165,Zeeland,Zeeland,NL,2.0,http://sws.geonames.org/2744011/,51.6975,5.67639,,,
+87869,HuygensVOCTOP_087870,Mind,Minden,DE,3.0,http://sws.geonames.org/2871039/,52.28953,8.91455,,,
+150175,HuygensVOCTOP_150176,Zeelant,Zeeland,NL,2.0,http://sws.geonames.org/2744011/,51.6975,5.67639,,,
+29970,HuygensVOCTOP_029971,Delburg,Delbruck,DE,3.0,http://sws.geonames.org/2938389/,51.76503,8.56223,,,
+87004,HuygensVOCTOP_087005,Middelburg,Middelburg,NL,2.0,http://sws.geonames.org/2750896/,51.5,3.61389,,,
