@@ -1,0 +1,30 @@
+[
+  [
+    {
+      "word": "Anthonij",
+      "ner": true,
+      "labels": {
+        "BERT": {
+          "person": {
+            "bio": "B"
+          }
+        }
+      }
+    },
+    {
+      "word": "BERFALSETEST",
+      "ner": false
+    },
+    {
+      "word": "Bonel",
+      "ner": true,
+      "labels": {
+        "BERT": {
+          "person": {
+            "bio": "I"
+          }
+        }
+      }
+    }
+  ]
+]
