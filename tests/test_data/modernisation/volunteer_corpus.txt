@@ -1,0 +1,21 @@
+^eene$@ene
+^by$@bij
+^zyn$@zijn
+^zoo$@zo
+^my$@mij
+^uijt$@uit
+^geteekend$@getekend
+^numero$@nummer
+^comp$@compagnie
+^heeren$@heren
+^deselve$@dezelve
+^zyne$@zijne
+^dezes$@van deze
+^ue$@Uwe
+^vande$@van de
+^sal$@zal
+^julij$@juli
+^verkooper$@verkoper
+^alzoo$@alzo
+^inde$@in de
+

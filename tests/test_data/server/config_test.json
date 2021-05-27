@@ -1,0 +1,20 @@
+{
+    "string_to_sentences": {
+
+    },
+    "post_correction": {
+
+    },
+    "ner_bert": {
+        "berts_to_use": {"mock": ["person", "location", "date"]}
+    },
+    "ner_lists": {
+        "data_dir": ["ner_lists", "SZSA"],
+        "entity_types": [],
+        "cutoff_score": 0.85,
+        "word_getter": "BERT"
+    },
+    "modernisation": {
+        "modernisable_entities": ["O", "B-time", "I-time"]
+    }
+}
