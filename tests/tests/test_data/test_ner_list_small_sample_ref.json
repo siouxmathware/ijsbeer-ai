@@ -1,0 +1,225 @@
+[
+    [
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 0.9777777777777777,
+                        "searchable": "theodoru honorus roukena",
+                        "canonical_form": "Theodoru Honorus Roukena",
+                        "extra_attributes": {},
+                        "list_name": "fuzzy_opvarenden",
+                        "bio": "B"
+                    },
+                    {
+                        "score": 1.0,
+                        "searchable": "theodorus honorus roukena",
+                        "canonical_form": "Theodorus Honorus Roukena",
+                        "extra_attributes": {},
+                        "list_name": "voc_opvarenden",
+                        "bio": "B"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "Theodorus"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 0.9777777777777777,
+                        "searchable": "theodoru honorus roukena",
+                        "canonical_form": "Theodoru Honorus Roukena",
+                        "extra_attributes": {},
+                        "list_name": "fuzzy_opvarenden",
+                        "bio": "I"
+                    },
+                    {
+                        "score": 1.0,
+                        "searchable": "theodorus honorus roukena",
+                        "canonical_form": "Theodorus Honorus Roukena",
+                        "extra_attributes": {},
+                        "list_name": "voc_opvarenden",
+                        "bio": "I"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "Honorus"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 0.9777777777777777,
+                        "searchable": "theodoru honorus roukena",
+                        "canonical_form": "Theodoru Honorus Roukena",
+                        "extra_attributes": {},
+                        "list_name": "fuzzy_opvarenden",
+                        "bio": "I"
+                    },
+                    {
+                        "score": 1.0,
+                        "searchable": "theodorus honorus roukena",
+                        "canonical_form": "Theodorus Honorus Roukena",
+                        "extra_attributes": {},
+                        "list_name": "voc_opvarenden",
+                        "bio": "I"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "Roukena"
+        },
+        {
+            "labels": {
+                "lists": []
+            },
+            "ner": true,
+            "word": "en"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 1.0,
+                        "searchable": "joos van der stijgelt",
+                        "canonical_form": "Joos van der Stijgelt",
+                        "extra_attributes": {},
+                        "list_name": "voc_opvarenden",
+                        "bio": "B"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "Joos"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 1.0,
+                        "searchable": "joos van der stijgelt",
+                        "canonical_form": "Joos van der Stijgelt",
+                        "extra_attributes": {},
+                        "list_name": "voc_opvarenden",
+                        "bio": "I"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "van"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 1.0,
+                        "searchable": "joos van der stijgelt",
+                        "canonical_form": "Joos van der Stijgelt",
+                        "extra_attributes": {},
+                        "list_name": "voc_opvarenden",
+                        "bio": "I"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "der"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 1.0,
+                        "searchable": "joos van der stijgelt",
+                        "canonical_form": "Joos van der Stijgelt",
+                        "extra_attributes": {},
+                        "list_name": "voc_opvarenden",
+                        "bio": "I"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "Stijgelt"
+        },
+        {
+            "labels": {
+                "lists": []
+            },
+            "ner": true,
+            "word": "in"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 1.013,
+                        "searchable": "fort amsterdam",
+                        "canonical_form": "fort Amsterdam",
+                        "extra_attributes": {},
+                        "list_name": "forten",
+                        "bio": "B"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "fort"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 1.013,
+                        "searchable": "fort amsterdam",
+                        "canonical_form": "fort Amsterdam",
+                        "extra_attributes": {},
+                        "list_name": "forten",
+                        "bio": "I"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "Amsterdam"
+        },
+        {
+            "labels": {
+                "lists": []
+            },
+            "ner": true,
+            "word": "na"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 1.013,
+                        "searchable": "noortwijk fort",
+                        "canonical_form": "Noortwijk fort",
+                        "extra_attributes": {},
+                        "list_name": "forten",
+                        "bio": "B"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "fort"
+        },
+        {
+            "labels": {
+                "lists": [
+                    {
+                        "score": 1.013,
+                        "searchable": "noortwijk fort",
+                        "canonical_form": "Noortwijk fort",
+                        "extra_attributes": {},
+                        "list_name": "forten",
+                        "bio": "I"
+                    }
+                ]
+            },
+            "ner": true,
+            "word": "Noortwijk"
+        }
+    ]
+]
