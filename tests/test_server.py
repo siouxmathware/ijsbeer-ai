@@ -30,7 +30,7 @@ Voor mij Adriaen van Renteregem geboren te Eindhoven
         cls.server_process = subprocess.Popen(
             [
                 'python3', 'server/fast_server.py',
-                '--config_file', 'tests/test_data/server/config_test.json',
+                '--configfile', 'tests/test_data/server/config_test.json',
                 '--n_parallel', '2'
             ],
             cwd=TL_DIR,
