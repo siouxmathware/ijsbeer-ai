@@ -1,0 +1,8 @@
+^weeder$@weder
+^woonplaatse$@woonplaats
+^passagie$@passage
+^kockelijcke$@kerkelijke
+^insigte$@inzicht
+^weder$@weer
+^kooplieden$@kooplieden
+^present$@present

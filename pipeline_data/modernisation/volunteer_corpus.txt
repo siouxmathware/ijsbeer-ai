@@ -154,7 +154,6 @@
 ^wert$@werde
 ^decemb$@december
 ^datse$@dat
-^haere$@haare
 ^geadsisteerd$@geassisteerd
 ^groete$@groeten
 ^sulthan$@sultan
@@ -402,7 +401,6 @@
 ^sigh$@zich
 ^zjde$@zijde
 ^bergh$@berg
-^doorden$@door den
 ^gewigten$@gewichten
 ^ingekogt$@ingekocht
 ^begeeven$@begeven
@@ -724,14 +722,11 @@
 ^ordre$@order
 ^nommer$@nummer
 ^myne$@mijne
-^deses$@dezen
 ^vanden$@Van den
 ^januarij$@januari
 ^geheele$@gehele
 ^vooren$@voren
-^sijnde$@wijde
-^wordende$@Worden de
-^aug$@aug.
+^sijnde$@zijnde
 ^versoek$@verzoek
 ^wyk$@wijk
 ^februarij$@februari
@@ -741,7 +736,6 @@
 ^deese$@deze
 ^ondergeteekende$@ondergetekende
 ^sijne$@zijn
-^present$@prezent
 ^desselfs$@deszelfs
 ^tyd$@tijd
 ^teekenen$@tekenen
@@ -750,7 +744,6 @@
 ^meij$@mei
 ^sedert$@sinds
 ^aande$@Aan de
-^naer$@niet
 ^7ber$@september
 ^zelven$@zelf
 ^gulde$@gulden
@@ -789,8 +782,6 @@
 ^segt$@zeg
 ^toebehoorende$@toebehorende
 ^getuijgen$@getuigen
-^natenoemen$@Na te noemen
-^natenoemene$@Na te noeme ene
 ^noodige$@nodige
 ^stede$@stad
 ^packen$@pakken
@@ -889,7 +880,6 @@
 ^genoomen$@genomen
 ^gewesen$@gewezen
 ^opeischbaar$@opeisbaar
-^denzelve$@Den zelve
 ^raaden$@raden
 ^qualiteijt$@kwaliteid
 ^origineele$@originele
@@ -970,7 +960,6 @@
 ^twede$@tweede
 ^schuldeischen$@schuldeisen
 ^seerd$@zeerd
-^wiert$@niet
 ^artekel$@artikel
 ^sware$@waren
 ^pecceel$@perceel
@@ -1176,7 +1165,6 @@
 ^coijang$@cooiang
 ^anthonis$@antonis
 ^gehochte$@gekochte
-^hoffsteede$@hofsteede
 ^ziyn$@zijn
 ^susdit$@zusdit
 ^ringe$@ringen

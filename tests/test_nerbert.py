@@ -11,7 +11,7 @@ class TestNerBert(test_tools.TestTools):
     def setUpClass(cls):
         constants.DATA_DIR = test_tools.TEST_DATA_DIR
         cls.ner_bert = ner_bert.MultipleBerts(
-            berts_to_use={'mock': ('person', 'location', 'date')},
+            berts_to_use={'mock': ['person', 'location', 'time']},
         )
 
     def setUp(self):

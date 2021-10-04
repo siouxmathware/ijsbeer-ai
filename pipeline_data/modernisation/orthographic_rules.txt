@@ -1,7 +1,6 @@
 ^deses$@van deze
 ^dezes$@van deze
 ^de[sz]es$@van deze
-^weder$@nogmaals
 ^mitsgaders$@bovendien
 ^onse$@onze
 ^med$@met
@@ -110,7 +109,6 @@ nommer$@nummer
 ^seer$@zeer
 ^sij$@zij
 ^maij$@mei
-^zyde$@zeide
 zyn@zijn
 ^geheele$@gehele
 ^vooren$@voren

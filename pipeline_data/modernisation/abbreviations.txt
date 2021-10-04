@@ -37,7 +37,7 @@
 # Example lb: => pond
 ^lb[:;=„s]{,2}$@pond
 # Juff:r => Juffrouw
-^juff[:;=„]?r?$@juffrow
+^juff[:;=„]?r?$@juffrouw
 # duplic => duplicaat
 ^duplic[:;=„]?$@duplicaat
 # penn: => penningen
@@ -46,7 +46,7 @@
 ^p?r?C[:;=„]t?o$@procent
 ^p[:;=„]r$@procent
 # Example rd:s => rijksdaalders
-^rd[:;=„](s?)$@rijksdaaler\1
+^rd[:;=„](s?)$@rijksdaalder\1
 ^r(ij|y)[xkcds]{,2}[:;=](s?)$@rijksdaalder\2
 # Example mitsg:s => bovendien
 ^mitsg[:;=„]s?$@bovendien

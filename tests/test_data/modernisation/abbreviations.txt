@@ -37,7 +37,7 @@
 # Example lb: => pond
 ^lb[:;=„s]{,2}$@pond
 # Juff:r => Juffrouw
-^juff[:;=„]?r?$@juffrow
+^juff[:;=„]?r?$@juffrouw
 # duplic => duplicaat
 ^duplic[:;=„]?$@duplicaat
 # penn: => penningen

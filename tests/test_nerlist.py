@@ -12,7 +12,7 @@ class TestNerLists(test_tools.TestTools):
         constants.DATA_DIR = test_tools.TEST_DATA_DIR
         ner_lists_config = {
             "data_dir": ["ner_lists", "NA"],
-            "entity_types": ["person", "location", "date"],
+            "entity_types": ["person", "location", "time"],
             "cutoff_score": 0.92,
             "word_getter": "NER"
         }

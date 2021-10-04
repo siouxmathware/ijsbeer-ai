@@ -103,4 +103,4 @@ class Modernisation:
 
 if __name__ == "__main__":
     m = Modernisation()
-    print(m._per_word({"ner": True, "post_correction": "Rijke:"}))
+    print(m._per_word({"ner": True, "post_correction": "sijnde"}))

@@ -116,3 +116,13 @@ class Pipeline:
             obj = self.modernisation(obj)
 
         return obj
+
+
+if __name__ == "__main__":
+    import json
+    with open("server/config_NA.json") as f:
+        config = json.load(f)
+
+    p = Pipeline(config)
+    result = p("Rijste van de aangecomene, en ver„\n1roi")
+    pass

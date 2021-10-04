@@ -114,14 +114,14 @@
             "person": {
               "$ref": "#/definitions/BERT_label"
             },
-            "date": {
+            "time": {
               "$ref": "#/definitions/BERT_label"
             }
           },
           "required": [
             "location",
             "person",
-            "date"
+            "time"
           ],
           "additionalProperties": false
         },

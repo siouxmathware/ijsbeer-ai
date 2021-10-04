@@ -1,5 +1,4 @@
 ^ah$@ah
-^aan$@aangiften
 ^aeenhoren$@aanhoren
 ^agtbaaren$@achtbaren
 ^agtbaere$@achtbare
@@ -76,7 +75,6 @@
 ^htuure$@huur
 ^huy$@huis 
 ^huys$@huis
-^iaare$@jaren
 ^iaarlykse$@jaarlijkse
 ^iager$@jager
 ^ian$@jan
@@ -176,7 +174,6 @@
 ^zeeland$@zeeland
 ^zeilant$@zeeland
 ^zesentwintigste$@zesentwintigste
-^zomma$@bedrag
 ^zoort$@soort
 ^zuiderzee$@zuiderzee
 ^zydkamer$@zijkamer
@@ -211,7 +208,6 @@
 ^avonts$@'s avonds
 ^batavia$@batavia
 ^beankwoording$@beantwoording
-^becomen$@krijgen
 ^bedrende$@bediende
 ^beeder$@weder
 ^beestiaal$@bestiaal
@@ -277,7 +273,6 @@
 ^datr$@dat er
 ^dee$@de
 ^deese$@deze
-^deeser$@deze
 ^deeze$@deze
 ^deezes$@dezes
 ^dens$@den
@@ -310,7 +305,6 @@
 ^ehaarlem$@haarlem
 ^edaen$@gedaan
 ^eene$@ene
-^eenen$@enen
 ^eenich$@enig
 ^eenig$@enig
 ^eenige$@enige
@@ -400,7 +394,6 @@
 ^heeden$@heden
 ^heeren$@heren
 ^heetaris$@hectaren
-^het$@hetzelfde
 ^hi$@hij
 ^hiezen$@kiezen
 ^hijpotheek$@hypotheek
@@ -495,7 +488,6 @@
 ^mynen$@mijnen
 ^naamw$@naam
 ^nade$@nader
-^nadeelig$@nadelige
 ^naer$@naar
 ^nalaaten$@nalaten
 ^namaning$@navordering
@@ -529,7 +521,6 @@
 ^onderteekend$@ondertekend
 ^onderwijlen$@ondertussen
 ^ongevaer$@ongeveer
-^onmiddelyk$@onmiddelijk
 ^onse$@onze
 ^ontbreekende$@ontbrekende
 ^ontfangen$@ontvangen
@@ -584,7 +575,6 @@
 ^rancs$@francs
 ^reede$@rede
 ^reeden$@reden
-^reekenen$@redenen
 ^reekening$@rekening
 ^reets$@reeds
 ^refereeren$@refereren
@@ -631,7 +621,6 @@
 ^sig$@zich
 ^sijn$@zijn
 ^sijne$@zijn
-^sijner$@van sijn
 ^slaapers$@slapers
 ^soete$@boete
 ^somma$@som
@@ -766,7 +755,6 @@
 ^wagrvan$@waarvan
 ^wallen$@willen
 ^wechvoerende$@wegvarende
-^weder$@nogmaals
 ^wedersijden$@wederzijden
 ^wedes$@nogmaals
 ^weduwe$@weduwe

@@ -18,9 +18,9 @@ class TestPipeline(unittest.TestCase):
         if berts_to_initialize == 'empty':
             cls.berts_to_initialize = {}
         elif berts_to_initialize == 'mock':
-            cls.berts_to_initialize = {'mock': ('person', 'location', 'date')}
+            cls.berts_to_initialize = {'mock': ('person', 'location', 'time')}
         elif berts_to_initialize == 'test':
-            cls.berts_to_initialize = {'40-10-1-split-minus-137-fixed': ('person', 'location', 'date')}
+            cls.berts_to_initialize = {'40-10-1-split-minus-137-fixed': ('person', 'location', 'time')}
         else:
             raise ValueError
         with open(op.join(test_tools.TEST_DATA_DIR, 'AN_disk1_ZIPs_7538_alto.txt')) as f:
@@ -28,6 +28,7 @@ class TestPipeline(unittest.TestCase):
         cls.input_string = ''.join(data[:100000])
         with open(op.join(test_tools.TEST_DATA_DIR, 'server', 'config_test.json')) as f:
             config = json.load(f)
+        config['ner_bert']['berts_to_use'] = cls.berts_to_initialize
         cls.pipeline = Pipeline(config)
         if run:
             for _ in range(10):

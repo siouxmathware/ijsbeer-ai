@@ -49,6 +49,7 @@ class RegexRules:
             'orthographic_rules': {},
             'volunteer_corpus': {},
             'volunteer_corpus_2021-02-23': {},
+            'lus_feedback': {},
         }
         for val in self.rules_per_word_per_file.values():
             for tree in self.tree_regexes.keys():

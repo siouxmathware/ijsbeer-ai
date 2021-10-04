@@ -8,14 +8,14 @@ from lib.constants import DATA_DIR
 from data_suppliers.text.nerbio.data_classes import InputData
 
 LOGGER = logging.getLogger(__name__)
-BERT_CATEGORIES = ('person', 'location', 'date')
+BERT_CATEGORIES = ('person', 'location', 'time')
 
 BERTS = {
     '4-1-0-split': {
         'vocab': ('<PAD>', 'O', 'B-PER', 'I-PER', 'B-LOC', 'I-LOC', 'B-TIME', 'I-TIME'),
         'weights_path': op.join(
             DATA_DIR, 'ner_bert', '4-1-0-split', 'weights.01-0.8802.h5'),
-        'map': {'person': 'PER', 'location': 'LOC', 'date': 'TIME'},
+        'map': {'person': 'PER', 'location': 'LOC', 'time': 'TIME'},
         'word_form': 'post_correction'
     },
     '40-10-1-split': {
@@ -23,7 +23,7 @@ BERTS = {
         'weights_path': op.join(
             DATA_DIR, 'ner_bert', '40-10-1-split',
             'generator-40-10-1-split-t16-sigmoid-retry-082423_weights.02-0.9011.h5'),
-        'map': {'person': 'PER', 'location': 'LOC', 'date': 'TIME'},
+        'map': {'person': 'PER', 'location': 'LOC', 'time': 'TIME'},
         'word_form': 'post_correction'
     },
     '40-10-1-split-minus-137': {
@@ -31,7 +31,7 @@ BERTS = {
         'weights_path': op.join(
             DATA_DIR, 'ner_bert', '40-10-1-split-minus-137',
             'sigmoid-40-10-1-split-minus-137-093503_weights.04-0.9119.h5'),
-        'map': {'person': 'PER', 'location': 'LOC', 'date': 'TIME'},
+        'map': {'person': 'PER', 'location': 'LOC', 'time': 'TIME'},
         'word_form': 'post_correction'
     },
     '40-10-1-split-minus-137-fixed': {
@@ -39,13 +39,13 @@ BERTS = {
         'weights_path': op.join(
             DATA_DIR, 'ner_bert', '40-10-1-split-minus-137-fixed',
             'common-logging-fixed-gsutils-cp-163512_weights.08-0.9248.h5'),
-        'map': {'person': 'PER', 'location': 'LOC', 'date': 'TIME'},
+        'map': {'person': 'PER', 'location': 'LOC', 'time': 'TIME'},
         'word_form': 'post_correction'
     },
     'mock': {
         'vocab': ('<PAD>', 'O', 'B-PER', 'I-PER', 'B-LOC', 'I-LOC', 'B-TIME', 'I-TIME'),
         'weights_path': '',
-        'map': {'person': 'PER', 'location': 'LOC', 'date': 'TIME'},
+        'map': {'person': 'PER', 'location': 'LOC', 'time': 'TIME'},
         'word_form': 'word'
     }
 }

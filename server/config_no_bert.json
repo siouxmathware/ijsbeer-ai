@@ -7,7 +7,7 @@
     },
     "ner_lists": {
         "data_dir": ["ner_lists", "SZSA"],
-        "entity_types": ["person", "location", "date"],
+        "entity_types": ["person", "location", "time"],
         "cutoff_score": 0.85,
         "word_getter": "BERT"
     },

@@ -14,7 +14,7 @@ unittest.TestLoader.sortTestMethodsUsing = None  # to test the tests in the orde
 
 class TestSchema(unittest.TestCase):
     def setUp(self):
-        with open(op.join(TEST_DATA_DIR, 'format_proposal_20210315.json'), 'r') as f:
+        with open(op.join(TEST_DATA_DIR, 'format_proposal_20210603.json'), 'r') as f:
             self.base_json_data = json.load(f)
 
     def testSchema(self):
