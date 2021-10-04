@@ -1,0 +1,17 @@
+{
+    "string_to_sentences": {
+
+    },
+    "post_correction": {
+
+    },
+    "ner_lists": {
+        "data_dir": ["ner_lists", "SZSA"],
+        "entity_types": ["person", "location", "date"],
+        "cutoff_score": 0.85,
+        "word_getter": "BERT"
+    },
+    "modernisation": {
+        "modernisable_entities": ["O", "B-time", "I-time"]
+    }
+}

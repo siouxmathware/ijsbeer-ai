@@ -1,0 +1,21 @@
+{
+  "model_parameters": {
+    "model_name": "bert_mock",
+    "config": "bert_en_uncased_L-12_H-768_A-12/2"
+  },
+  "train_parameters": {
+    "trainer_name": "bert_ner",
+    "output_folder": "temp/data/output",
+    "tensorboard_log_folder": "temp/data/output/tensorboard",
+    "nr_epochs": 2,
+    "optimizer": "cyclic"
+  },
+  "data_parameters": {
+    "data_supplier_name": "ner_bio_generator",
+    "input_folder": "data/input/smaller"
+  },
+  "parameter_path": "data/bert_ner_parameters_local.json",
+  "use_mlflow": false,
+  "experiment_name": "ijsbeer",
+  "run_name": "run_name"
+}
