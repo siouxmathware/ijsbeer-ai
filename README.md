@@ -1,4 +1,4 @@
-[![Documentation](https://img.shields.io/badge/doc-stable-blue.svg)](https://keithwm.github.io/ijsbeer-ai/src/)
+[![Documentation](https://img.shields.io/badge/doc-stable-blue.svg)](https://siouxmathware.github.io/ijsbeer-ai/)
 
 # ijsbeer-ai
 A repository for hosting the ijsbeer-ai documentation.
