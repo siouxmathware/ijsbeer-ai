@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -195,7 +195,7 @@
 <dt id="lib.string_to_sentences.replacer.Replacer.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>from_key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The key of the word dict that is the input for the methods, e.g. “word”</p></li>
 <li><p><strong>to_key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The key of the word dict that is to contain the output of the methods, e.g. “word”</p></li>
@@ -208,13 +208,13 @@
 <dt id="lib.string_to_sentences.replacer.Replacer.get_replacement_inputs">
 <code class="sig-name descname"><span class="pre">get_replacement_inputs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words_sub</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.get_replacement_inputs" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>words_sub</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – The words that are found to be a match to the patterns.</p></li>
 <li><p><strong>patterns</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code>]) – The patterns to which the words were matched.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Those parts of the words_sub that match the group(s) in the corresponding regex patterns.</p>
 </dd>
 </dl>
@@ -224,7 +224,7 @@
 <dt id="lib.string_to_sentences.replacer.Replacer.joinor">
 <code class="sig-name descname"><span class="pre">joinor</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.joinor" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Function (N.B. the method returns a function) that will take a series of words and join them into a
 single word. To be used as an input for
 <code class="docutils literal notranslate"><span class="pre">Replacer.replace_words(...,</span> <span class="pre">replacement_function=Replacer.joinor(),</span> <span class="pre">...)</span></code></p>
@@ -236,7 +236,7 @@ single word. To be used as an input for
 <dt id="lib.string_to_sentences.replacer.Replacer.replace_words">
 <code class="sig-name descname"><span class="pre">replace_words</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.replace_words" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>words</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – The list of words in which to search for patterns and apply replacements.</p></li>
 <li><p><strong>patterns</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code>]) – The patterns to search.</p></li>
@@ -246,7 +246,7 @@ is placed in the list of words in their place.</p></li>
 (default), the search will skip to the end of the replaced words after a replacement.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p></p>
 </dd>
 </dl>
@@ -256,7 +256,7 @@ is placed in the list of words in their place.</p></li>
 <dt id="lib.string_to_sentences.replacer.Replacer.return_matches">
 <code class="sig-name descname"><span class="pre">return_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patterns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.return_matches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>words</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – List of words through which to search for the pattern</p></li>
 <li><p><strong>patterns</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code>]]) – The patterns to search a subsequence of the words is matched against the sequence of patters:
@@ -264,7 +264,7 @@ each word must match the appropriate pattern</p></li>
 <li><p><strong>start</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Which element of the patterns is considered to be the start of the match.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Indices of matches, offset by the start parameter.</p>
 </dd>
 </dl>
@@ -274,11 +274,11 @@ each word must match the appropriate pattern</p></li>
 <dt id="lib.string_to_sentences.replacer.Replacer.splittor">
 <code class="sig-name descname"><span class="pre">splittor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.replacer.Replacer.splittor" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>regex</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Pattern</span></code>) – The regex that splits a word into multiple words. Regex groups indicate what should become new
 words.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Function (N.B. the method returns a function) that will take a single word and split it into several
 different words. To be used as an input for
 <code class="docutils literal notranslate"><span class="pre">Replacer.replace_words(...,</span> <span class="pre">replacement_function=Replacer.splittor(),</span> <span class="pre">...)</span></code></p>
@@ -301,12 +301,12 @@ different words. To be used as an input for
 <dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>text</strong> – A string representing the historic text. Words are considered to be separated, broadly speaking, by
 either spaces and/or newlines. A double newline is interpreted to separate sentences. Other methods are also
 used to separate sentences based on punctuation.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a list of lists of words object with format example given below.</p>
 </dd>
 </dl>
@@ -322,7 +322,7 @@ The “ner” key tells if this word should be used for named entity recognition
 <dt id="lib.string_to_sentences.string_to_sentences.StringToSentences.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.string_to_sentences.string_to_sentences.StringToSentences.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>_</strong> – Unused kwarg argument, included for symmetry with the other pipeline steps.</p>
 </dd>
 </dl>

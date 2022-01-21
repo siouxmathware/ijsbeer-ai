@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -199,10 +199,10 @@ The goal is solely to aid of the user reading the historical texts.</p>
 <dt id="lib.modernisation.modernisation.Modernisation.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.modernisation.Modernisation.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sentences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – List of lists of words</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The same list of lists, with the fields “remove_whitespace_for_modernisation” and “modernisation” added
 to each word. The former is currently unused, but could be used if modernisation is extended to consider
 multiple words.</p>
@@ -214,7 +214,7 @@ multiple words.</p>
 <dt id="lib.modernisation.modernisation.Modernisation.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modernisable_entities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('O',</span> <span class="pre">'B-time',</span> <span class="pre">'I-time')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_word_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.modernisation.Modernisation.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>modernisable_entities</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]]) – Which entity types can be modernised.</p></li>
 <li><p><strong>min_word_length</strong> – Minimum length of words for which to apply full modernisation. Shorter words are only
@@ -253,10 +253,10 @@ All regular expressions are to be divided in three categories:</p>
 <dt id="lib.modernisation.regex_rules.RegexRules.dict_lookup">
 <code class="sig-name descname"><span class="pre">dict_lookup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form_lowercase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules.dict_lookup" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>word_form_lowercase</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Lower case form of the word to modernise</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A tuple, the first element indicated the found replacement (if any), the second whether a replacement
 was found (True) or not (False).</p>
 </dd>
@@ -267,13 +267,13 @@ was found (True) or not (False).</p>
 <dt id="lib.modernisation.regex_rules.RegexRules.regex_subs">
 <code class="sig-name descname"><span class="pre">regex_subs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form_lowercase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.regex_rules.RegexRules.regex_subs" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>word_form_lowercase</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Lower case form of the word to modernise</p></li>
 <li><p><strong>filename</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The filename for which to apply regexes.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A tuple, the first element indicated the result of applying the regular expressions, the second whether
 the regex changed the word-form (True) or not (False).</p>
 </dd>
@@ -303,13 +303,13 @@ The splitting into syllables is handled by the
 <dt id="lib.modernisation.syllable_corrector.SyllableCorrector.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_form_lowercase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_corrector.SyllableCorrector.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>word_form_lowercase</strong> – The lower case word-form to be modernised.</p></li>
 <li><p><strong>verbose</strong> – Flag whether to output extra info for debugging (True) or not (False).</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A tuple, the first element indicated the result of applying the syllabel corrector, the second whether
 the regex changed the word-form (True) or not (False).</p>
 </dd>
@@ -320,7 +320,7 @@ the regex changed the word-form (True) or not (False).</p>
 <dt id="lib.modernisation.syllable_corrector.SyllableCorrector.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_corrector.SyllableCorrector.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>file_name</strong> – The name of the switches file, defaults to <cite>switches.json</cite> the path is given relative to the
 <cite>constants.DATA_DIR</cite> directory.</p>
 </dd>
@@ -369,7 +369,7 @@ examples.</p>
 <dt id="lib.modernisation.syllable_tokenizer.SyllableTokenizer.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;PAD&gt;'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[CLS]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[SEP]'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'[UNK]'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.SyllableTokenizer.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pad</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Representation of the pad-token</p></li>
 <li><p><strong>start</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Representation of the start-token</p></li>
@@ -384,10 +384,10 @@ examples.</p>
 <dt id="lib.modernisation.syllable_tokenizer.SyllableTokenizer.decode">
 <code class="sig-name descname"><span class="pre">decode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.SyllableTokenizer.decode" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tokens</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Tokens of the word</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Word formed from the tokens</p>
 </dd>
 </dl>
@@ -397,10 +397,10 @@ examples.</p>
 <dt id="lib.modernisation.syllable_tokenizer.SyllableTokenizer.encode">
 <code class="sig-name descname"><span class="pre">encode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.modernisation.syllable_tokenizer.SyllableTokenizer.encode" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>word</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Word to be split</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>List of tokens for the word</p>
 </dd>
 </dl>

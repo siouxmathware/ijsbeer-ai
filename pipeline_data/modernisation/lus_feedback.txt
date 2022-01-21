@@ -6,3 +6,5 @@
 ^weder$@weer
 ^kooplieden$@kooplieden
 ^present$@present
+^ambtgenoot$@ambtgenoot
+^amptgenoot$@ambtgenoot

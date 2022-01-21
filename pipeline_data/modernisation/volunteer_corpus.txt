@@ -819,7 +819,6 @@
 ^jaaren$@jaren
 ^febr$@februari
 ^daarby$@daarbij
-^staet$@sta
 ^verscheijde$@verscheide
 ^gebruijk$@gebruik
 ^eijland$@eiland

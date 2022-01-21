@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -188,63 +188,63 @@ The examples are presented by calls from Python, but can easily be implemented i
 </pre></div>
 </div>
 <p>This would produce an output like (where most entried have been omited for clarity)</p>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">[</span>
-      <span class="p">{},</span>
-      <span class="p">{</span>
-        <span class="nt">&quot;begin_char&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-        <span class="nt">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;B-location&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;end_char&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
-        <span class="nt">&quot;entity_chars&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="p">[</span>
-            <span class="mi">30</span><span class="p">,</span>
-            <span class="mi">41</span>
-          <span class="p">]</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;labels&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&quot;BERT&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span>
-              <span class="nt">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span>
-              <span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span> <span class="mf">0.0021120477467775345</span><span class="p">,</span>
-                <span class="nt">&quot;B&quot;</span><span class="p">:</span> <span class="mf">0.002442566677927971</span><span class="p">,</span>
-                <span class="nt">&quot;I&quot;</span><span class="p">:</span> <span class="mf">0.001100641442462802</span><span class="p">,</span>
-                <span class="nt">&quot;O&quot;</span><span class="p">:</span> <span class="mf">0.008404848165810108</span>
-              <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="p">{</span>
-              <span class="nt">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span>
-              <span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span> <span class="mf">0.0021120477467775345</span><span class="p">,</span>
-                <span class="nt">&quot;B&quot;</span><span class="p">:</span> <span class="mf">0.946304202079773</span><span class="p">,</span>
-                <span class="nt">&quot;I&quot;</span><span class="p">:</span> <span class="mf">0.001456045312806964</span><span class="p">,</span>
-                <span class="nt">&quot;O&quot;</span><span class="p">:</span> <span class="mf">0.008404848165810108</span>
-              <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;person&quot;</span><span class="p">:</span> <span class="p">{</span>
-              <span class="nt">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span>
-              <span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span> <span class="mf">0.0021120477467775345</span><span class="p">,</span>
-                <span class="nt">&quot;B&quot;</span><span class="p">:</span> <span class="mf">0.036251552402973175</span><span class="p">,</span>
-                <span class="nt">&quot;I&quot;</span><span class="p">:</span> <span class="mf">0.001928190584294498</span><span class="p">,</span>
-                <span class="nt">&quot;O&quot;</span><span class="p">:</span> <span class="mf">0.008404848165810108</span>
-              <span class="p">}</span>
-            <span class="p">}</span>
-          <span class="p">},</span>
-          <span class="nt">&quot;lists&quot;</span><span class="p">:</span> <span class="p">[]</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;modernisation&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ner&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nt">&quot;post_correction&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;remove_whitespace_for_modernisation&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span>
-      <span class="p">},</span>
-      <span class="p">{}</span>
-    <span class="p">]</span>
-  <span class="p">]</span>
-<span class="p">}</span>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Success&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;begin_char&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B-location&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;end_char&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;entity_chars&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">          </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="mi">41</span><span class="w"></span>
+<span class="w">          </span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;labels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;BERT&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">              </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;O&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">              </span><span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0021120477467775345</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;B&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.002442566677927971</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;I&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001100641442462802</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;O&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.008404848165810108</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">              </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">              </span><span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0021120477467775345</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;B&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.946304202079773</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;I&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001456045312806964</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;O&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.008404848165810108</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;person&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">              </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;O&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">              </span><span class="nt">&quot;label_probabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;&lt;PAD&gt;&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0021120477467775345</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;B&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.036251552402973175</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;I&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001928190584294498</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;O&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.008404848165810108</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">          </span><span class="p">},</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;lists&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;modernisation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ner&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;post_correction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;remove_whitespace_for_modernisation&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;word&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eijndhoven,&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">{}</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>If desired, the pipeline can be limited to only using a number of steps, e.g.</p>
@@ -258,24 +258,24 @@ The examples are presented by calls from Python, but can easily be implemented i
 </pre></div>
 </div>
 <p>Results in</p>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">[</span>
-        <span class="p">{},</span>
-        <span class="p">{</span>
-          <span class="nt">&quot;begin_char&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-          <span class="nt">&quot;end_char&quot;</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
-          <span class="nt">&quot;modernisation&quot;</span><span class="p">:</span> <span class="s2">&quot;Eindhoven,&quot;</span><span class="p">,</span>
-          <span class="nt">&quot;ner&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nt">&quot;post_correction&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span>
-          <span class="nt">&quot;remove_whitespace_for_modernisation&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nt">&quot;word&quot;</span><span class="p">:</span> <span class="s2">&quot;Eijndhoven,&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{}</span>
-        <span class="p">]</span>
-    <span class="p">]</span>
-<span class="p">}</span>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Success&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{},</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;begin_char&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;end_char&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;modernisation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eindhoven,&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;ner&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;post_correction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eijndhoven,&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;remove_whitespace_for_modernisation&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;word&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eijndhoven,&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="p">{}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note that because BERT was not used, the named Entity “Eindhoven” <em>is</em> modernized in this example, where it was not before.</p>

@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -197,10 +197,10 @@ based on a .ht weights file or a mocked BERT. PyTorch is no longer supported.</p
 <dt id="lib.ner_bert.inference.Bert.__call__">
 <em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sentences</strong> – Sentences to do NER on</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Predictions in numpy array form, it is left to the data supplier class to handle the translation to</p>
 </dd>
 </dl>
@@ -211,7 +211,7 @@ based on a .ht weights file or a mocked BERT. PyTorch is no longer supported.</p
 <dt id="lib.ner_bert.inference.Bert.__init__">
 <em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nr_tags</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of tags used by the BERT</p></li>
 <li><p><strong>weights_path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Path to the weights file.</p></li>
@@ -224,13 +224,13 @@ based on a .ht weights file or a mocked BERT. PyTorch is no longer supported.</p
 <dt id="lib.ner_bert.inference.Bert.create_bert">
 <em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create_bert</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_bert.inference.Bert.create_bert" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vocab</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]) – Number of tags used by the BERT</p></li>
 <li><p><strong>weights_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Path to the weights file.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>An instance of the appropriate BERT class, determined by the extension of the weights file:</p>
 <ul class="simple">
 <li><p>.h5 results in a TensorFlow BERT</p></li>

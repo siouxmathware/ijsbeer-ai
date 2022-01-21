@@ -25,7 +25,7 @@
 ^['`’]t$@het
 ^d['`’]$@de
 # Example: g’arresteerde => gearresteerde
-^g[`'’]([a-zA-Z0-9].+)$@ge\1
+^g[`'’]([a-z]+)$@ge\1
 # Enzovoorts, etcetera, c.s.
 ^enz[:;.]{,2}$@enz.
 ^etc[:;.]{,2}$@etc.
@@ -43,7 +43,7 @@
 # penn: => penningen
 ^penn[:;=„]?$@penningen
 # Everything with percent
-^p?r?C[:;=„]t?o$@procent
+^pr?C[:;=„]t?o$@procent
 ^p[:;=„]r$@procent
 # Example rd:s => rijksdaalders
 ^rd[:;=„](s?)$@rijksdaalder\1
@@ -88,7 +88,7 @@
 ^gr[:;=]$@groot
 ^herw[:;=„]s$@herwaards
 ^i[:;=„]r$@ingenieur
-^(qu|kw)artierm:;=„]r$@kwartiermeester
+^(qu|kw)artierm[:;=„]r$@kwartiermeester
 ^[lt]ieuten[:;=„]t$@luitenant
 ^not[:;=]$@notitie
 ^onderget[:;=]$@ondergetekende
@@ -106,20 +106,20 @@
 
 
 # numbers
-^([0-9]+)[:;=„]([e])$@\1\2
+^([0-9]{1,2})[:;=„]([e])$@\1\2
 
 # Maanden
 ^[ij]an([ua]{1,2}.?[ri]{1,2}.?|ua|n)[:;.]?$@januari
-^febr?((u?a?r?i?e?)|(.{0,2}r.{0,2}))[:;.]?$@februari
+^febr?((u?a?r?i?e?)|([a-z]{0,2}r[a-z]{0,2}))[:;.]?$@februari
 ^ma[ae]?rt[ijyo]{,2}$@maart
-^apri.{,2}l.{,2}$@april
+^apri[a-z]{,2}l$@april
 ^m[ae]{1,2}[ijy]{1,2}$@mei
-^[ij]u.?n.{,2}$@juni
-^[ij]u.?l.{,2}$@juli
-^aa?ug.{,10}[:;.]?$@augustus
-^s.?ep[a-z]{,6}[:;.]?$@september
-^o.?[ck]to?[a-z]{,6}[:;.]?$@oktober
-^nov[a-z]{,6}[:;.]?$@november
+^[ij]un[ij]{,2}$@juni
+^[ij]ul[ij]{,2}$@juli
+^aa?ug[ust]{,5}[:;.]?$@augustus
+^sep[tembr]{,6}[:;.]?$@september
+^o[ck]to?[ber]{,3}[:;.]?$@oktober
+^nov[embr]{,6}[:;.]?$@november
 ^dec[embrs]{,6}[:;.]?$@december
 ^7b[e:;.]?r(is|e)?[:;.]?$@september
 ^8b[e:;.]?r(is|e)?[:;.]?$@oktober
@@ -130,7 +130,7 @@
 ^ma[ae]nda?[gch]{1,2}$@maandag
 ^di[ngs]{1,3}da?[gch]{1,2}$@dinsdag
 ^woens?da[gch]{1,2}$@woensdag
-^do.{1,5}da?[gch]{1,2}$@donderdag
+^do[nder]{1,5}da?[gch]{1,2}$@donderdag
 ^vr?(ij|y)da[gch]{1,2}$@vrijdag
 ^[zs]at.rda[gch]{1,2}$@zaterdag
 ^[zs]on[dt]a[gch]{1,2}$@zondag

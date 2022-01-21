@@ -130,7 +130,6 @@
 ^noven$@november
 ^numero$@nummer
 ^october$@oktober
-^ont$@ontvangen
 ^passeeren$@passeren
 ^patria$@vaderland
 ^pie$@predikant

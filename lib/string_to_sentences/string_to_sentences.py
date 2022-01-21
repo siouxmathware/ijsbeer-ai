@@ -160,6 +160,13 @@ class StringToSentences:
 
 if __name__ == "__main__":
     sts = StringToSentences()
-    txt = "Jn oude teksten zijn zinnen lang. Deze niet."
+    txt = """
+ook is van
+batavie gekomen ten
+anker de Chialoup d’ Tal„
+„meije met haar hoog Ed:
+apporte missive gedateerd
+8: stantij
+"""[1:-1]  # chop of first and last \n
     result = sts(txt)
     print('\n'.join(''.join(w['word'] for w in s) for s in result))

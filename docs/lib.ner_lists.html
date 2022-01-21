@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -202,7 +202,7 @@ An object is instantiated for each different type of entity in the project, e.g.
 <dt id="lib.ner_lists.direct_finder.DirectFinder.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.direct_finder.DirectFinder.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_dir</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Path to the data files to use relative to the pipeline_data director, e.g. “ner_lists/SZSA”.</p></li>
 <li><p><strong>entity_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – See <code class="xref py py-class docutils literal notranslate"><span class="pre">Finder</span></code></p></li>
@@ -223,17 +223,17 @@ An object is instantiated for each different type of entity in the project, e.g.
 <dt id="lib.ner_lists.direct_finder.FindEntitiesGivenDirectList.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.direct_finder.FindEntitiesGivenDirectList.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i_sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – A number indicating which sentence we are searching</p></li>
 <li><p><strong>sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – List of words. Note that this is not a “true sentence” in the sense
 used throughout the project. It is a subset of all words, depending on the object’s <code class="xref py py-const docutils literal notranslate"><span class="pre">get_words</span></code>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#lib.ner_lists.entity.Entity" title="lib.ner_lists.entity.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">Entity</span></code></a>]</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A list of found entities.</p>
 </dd>
 </dl>
@@ -243,7 +243,7 @@ used throughout the project. It is a subset of all words, depending on the objec
 <dt id="lib.ner_lists.direct_finder.FindEntitiesGivenDirectList.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direct_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.direct_finder.FindEntitiesGivenDirectList.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>direct_list</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>) – The list to search, given by a dictionary where the keys are the searchables and the values
 represent the (canonical) information on each entity.</p>
 </dd>
@@ -264,7 +264,7 @@ represent the (canonical) information on each entity.</p>
 <dt id="lib.ner_lists.entity.Entity.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canonical_form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_attributes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.entity.Entity.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of the sentence in which the entity was found</p></li>
 <li><p><strong>begin</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Begin character of the entity</p></li>
@@ -282,10 +282,10 @@ represent the (canonical) information on each entity.</p>
 <dt id="lib.ner_lists.entity.Entity.to_dict">
 <code class="sig-name descname"><span class="pre">to_dict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.entity.Entity.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>kwargs</strong> – Additional key-value pairs to place on the dict.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A dictionary containing relevant information on the entity for the output json as data</p>
 </dd>
 </dl>
@@ -305,14 +305,14 @@ represent the (canonical) information on each entity.</p>
 <dt id="lib.ner_lists.finder.FindEntities.__call__">
 <em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finder.FindEntities.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i_sentence</strong> – A number indicating which sentence we are searching</p></li>
 <li><p><strong>sentence</strong> – List of words. Note that this is not a “true sentence” in the sense
 used throughout the project. It is a subset of all words, depending on the object’s <code class="xref py py-const docutils literal notranslate"><span class="pre">get_words</span></code>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of found entities.</p>
 </dd>
 </dl>
@@ -334,10 +334,10 @@ used throughout the project. It is a subset of all words, depending on the objec
 <dt id="lib.ner_lists.finder.Finder.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finder.Finder.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sentences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – List of lists of words.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None, the words are modified</p>
 </dd>
 </dl>
@@ -347,7 +347,7 @@ used throughout the project. It is a subset of all words, depending on the objec
 <dt id="lib.ner_lists.finder.Finder.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_finders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finder.Finder.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>entity_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The type of entity for which the finder is searching, e.g. “person”.</p></li>
 <li><p><strong>entity_finders</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="#lib.ner_lists.finder.FindEntities" title="lib.ner_lists.finder.FindEntities"><code class="xref py py-class docutils literal notranslate"><span class="pre">FindEntities</span></code></a>]) – The entity finders that look through a specific list or tree.</p></li>
@@ -363,13 +363,13 @@ to determine how to get the list of searchable words.</p></li>
 <dt id="lib.ner_lists.finder.Finder.create_lists">
 <em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">create_lists</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finder.Finder.create_lists" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dirpath</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The directory where to search for files.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A dictionary where each key-value-pair is a combination of a filename with a corresponding dictionary
 of searchables.</p>
 </dd>
@@ -382,17 +382,17 @@ of searchables.</p>
 <dt id="lib.ner_lists.finder.load_file">
 <code class="sig-prename descclassname"><span class="pre">lib.ner_lists.finder.</span></code><code class="sig-name descname"><span class="pre">load_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.finder.load_file" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dirpath</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The directory where the file is located</p></li>
 <li><p><strong>list_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The name of the file</p></li>
 <li><p><strong>extension</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The extension of the file</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p>A dicrionary with the key “searchable” pointing to a list of dictionaries
 containing the keys “searchable”, “canonical_form” and “extra_attributes”. The first is given
 by a tuple of words (to allow reordering of the elements later), the second as a string and the third as a
@@ -437,17 +437,17 @@ dictionary.</p>
 <dt id="lib.ner_lists.fuzzy_finder.FindEntitiesGivenList.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_finder.FindEntitiesGivenList.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i_sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – A number indicating which sentence we are searching</p></li>
 <li><p><strong>sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – List of words. Note that this is not a “true sentence” in the sense
 used throughout the project. It is a subset of all words, depending on the object’s <code class="xref py py-const docutils literal notranslate"><span class="pre">get_words</span></code>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#lib.ner_lists.entity.Entity" title="lib.ner_lists.entity.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">Entity</span></code></a>]</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A list of found entities.</p>
 </dd>
 </dl>
@@ -457,7 +457,7 @@ used throughout the project. It is a subset of all words, depending on the objec
 <dt id="lib.ner_lists.fuzzy_finder.FindEntitiesGivenList.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fuzzy_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_finder.FindEntitiesGivenList.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fuzzy_list</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>) – The list to search, given by a dictionary where the keys are the searchables and the values
 represent the (canonical) information on each entity.</p></li>
@@ -479,7 +479,7 @@ An object is instantiated for each different type of entity in the project, e.g.
 <dt id="lib.ner_lists.fuzzy_finder.FuzzyFinder.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_finder.FuzzyFinder.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_dir</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Path to the data files to use relative to the pipeline_data director, e.g. “ner_lists/SZSA”.</p></li>
 <li><p><strong>entity_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – See <code class="xref py py-class docutils literal notranslate"><span class="pre">Finder</span></code></p></li>
@@ -505,7 +505,7 @@ The key element is searched for first, after which different ordereings of the m
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyListMatcher.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fuzzy_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyListMatcher.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fuzzy_list</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – The list through which to search for entities</p></li>
 <li><p><strong>cutoff_score</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Score below which to disregard matches.</p></li>
@@ -518,7 +518,7 @@ The key element is searched for first, after which different ordereings of the m
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyListMatcher.find_matches">
 <code class="sig-name descname"><span class="pre">find_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_approx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyListMatcher.find_matches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i_sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – An index of the sentence, used to match it to the correct place later on.</p></li>
 <li><p><strong>sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – List of words to match againse the <code class="xref py py-const docutils literal notranslate"><span class="pre">tree</span></code></p></li>
@@ -535,7 +535,7 @@ Setting it too low results in poor performance.
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyListMatcher.yield_matches">
 <code class="sig-name descname"><span class="pre">yield_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyListMatcher.yield_matches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i_sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – string index</p></li>
 <li><p><strong>sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – list of words</p></li>
@@ -556,7 +556,7 @@ Setting it too low results in poor performance.
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyMatcher.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyMatcher.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cutoff_score</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Score below which to disregard matches.</p>
 </dd>
 </dl>
@@ -566,7 +566,7 @@ Setting it too low results in poor performance.
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyMatcher.get_close_matches_scores">
 <em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_close_matches_scores</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possibilities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyMatcher.get_close_matches_scores" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>word_group</strong> – a string, might be multiple words concatenated without spaces.</p></li>
 <li><p><strong>possibilities</strong> – list of strings. word_group will be compared to all strings in this list.</p></li>
@@ -574,7 +574,7 @@ Setting it too low results in poor performance.
 <li><p><strong>cutoff</strong> – percentage of characters that should match before something is considered a match</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>either an empty list -&gt; no match/hit
 or a size 2 tuple with score and word_group string</p>
 </dd>
@@ -585,7 +585,7 @@ or a size 2 tuple with score and word_group string</p>
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyMatcher.score">
 <code class="sig-name descname"><span class="pre">score</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyMatcher.score" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>cutoff_score</strong> – threshold for % of characters that should match between word_group and an el. of word_list</p></li>
 <li><p><strong>word_group</strong> – a string, which is a concatenated list of words that are to be matched</p></li>
@@ -609,7 +609,7 @@ The key element is searched for first, after which different ordereings of the m
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyTreeMatcher.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyTreeMatcher.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tree</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – The tree through which to search for entities, each key points to a list of “searchables”
 containing that key as one of the elements.</p></li>
@@ -623,7 +623,7 @@ containing that key as one of the elements.</p></li>
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyTreeMatcher.find_matches">
 <code class="sig-name descname"><span class="pre">find_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_approx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyTreeMatcher.find_matches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i_sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – An index of the sentence, used to match it to the correct place later on.</p></li>
 <li><p><strong>sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – List of words to match againse the <code class="xref py py-const docutils literal notranslate"><span class="pre">tree</span></code></p></li>
@@ -640,7 +640,7 @@ Setting it too low results in poor performance.
 <dt id="lib.ner_lists.fuzzy_matcher.FuzzyTreeMatcher.yield_matches">
 <code class="sig-name descname"><span class="pre">yield_matches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_matcher.FuzzyTreeMatcher.yield_matches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i_sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – string index</p></li>
 <li><p><strong>sentence</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – list of words</p></li>
@@ -648,7 +648,7 @@ Setting it too low results in poor performance.
 <li><p><strong>entity_key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The tree is essentially a large dictionary. entity_key is the key of the most likely entity</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><em>Yields</em> entities as they are found</p>
 </dd>
 </dl>
@@ -667,17 +667,17 @@ Setting it too low results in poor performance.
 <dt id="lib.ner_lists.fuzzy_permutative_finder.FindEntitiesGivenTree.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_sentence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_permutative_finder.FindEntitiesGivenTree.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i_sentence</strong> – A number indicating which sentence we are searching</p></li>
 <li><p><strong>sentence</strong> – List of words. Note that this is not a “true sentence” in the sense
 used throughout the project. It is a subset of all words, depending on the object’s <code class="xref py py-const docutils literal notranslate"><span class="pre">get_words</span></code>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#lib.ner_lists.entity.Entity" title="lib.ner_lists.entity.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">Entity</span></code></a>]</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A list of found entities.</p>
 </dd>
 </dl>
@@ -687,7 +687,7 @@ used throughout the project. It is a subset of all words, depending on the objec
 <dt id="lib.ner_lists.fuzzy_permutative_finder.FindEntitiesGivenTree.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_permutative_finder.FindEntitiesGivenTree.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tree</strong> – The list to search, given by a dictionary where the keys are the searchables and the values
 represent the (canonical) information on each entity.</p></li>
@@ -709,7 +709,7 @@ An object is instantiated for each different type of entity in the project, e.g.
 <dt id="lib.ner_lists.fuzzy_permutative_finder.FuzzyPermutativeFinder.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_permutative_finder.FuzzyPermutativeFinder.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_dir</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Path to the data files to use relative to the pipeline_data director, e.g. “ner_lists/SZSA”.</p></li>
 <li><p><strong>entity_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – See <code class="xref py py-class docutils literal notranslate"><span class="pre">Finder</span></code></p></li>
@@ -726,10 +726,10 @@ An object is instantiated for each different type of entity in the project, e.g.
 <dt id="lib.ner_lists.fuzzy_permutative_finder.create_freq_table">
 <code class="sig-prename descclassname"><span class="pre">lib.ner_lists.fuzzy_permutative_finder.</span></code><code class="sig-name descname"><span class="pre">create_freq_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_permutative_finder.create_freq_table" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>all_list</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>) – A dictionary of searchable-canonical pairs.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A dictionary stating how often each searchable element occurs in the list.</p>
 </dd>
 </dl>
@@ -739,13 +739,13 @@ An object is instantiated for each different type of entity in the project, e.g.
 <dt id="lib.ner_lists.fuzzy_permutative_finder.create_tree">
 <code class="sig-prename descclassname"><span class="pre">lib.ner_lists.fuzzy_permutative_finder.</span></code><code class="sig-name descname"><span class="pre">create_tree</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_permutative_finder.create_tree" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>all_list</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>) – A dictionary of searchable-canonical pairs</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A dictionary where the keys are the first word that would be searched, the values are nested dicts of the
 same form as the input, i.e. searchable-canonical pairs.</p>
 </dd>
@@ -756,16 +756,16 @@ same form as the input, i.e. searchable-canonical pairs.</p>
 <dt id="lib.ner_lists.fuzzy_permutative_finder.remove_overlap">
 <code class="sig-prename descclassname"><span class="pre">lib.ner_lists.fuzzy_permutative_finder.</span></code><code class="sig-name descname"><span class="pre">remove_overlap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence_length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.fuzzy_permutative_finder.remove_overlap" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>entities</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#lib.ner_lists.entity.Entity" title="lib.ner_lists.entity.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">Entity</span></code></a>]) – The found entities by the permutative searching.</p></li>
 <li><p><strong>sentence_length</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The length of the sentence in which the entities occur.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#lib.ner_lists.entity.Entity" title="lib.ner_lists.entity.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">Entity</span></code></a>]</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A trimmed list of found entities where overlapping results are discarded.</p>
 </dd>
 </dl>
@@ -793,10 +793,10 @@ same form as the input, i.e. searchable-canonical pairs.</p>
 <dt id="lib.ner_lists.get_searchable_words.GetWords.from_string">
 <em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_string</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">getter_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWords.from_string" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>getter_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the derived class, either “NER” or “BERT”</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The uninstantiated class of the desired kind.</p>
 </dd>
 </dl>
@@ -812,11 +812,11 @@ same form as the input, i.e. searchable-canonical pairs.</p>
 <dt id="lib.ner_lists.get_searchable_words.GetWordsBert.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsBert.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sentences</strong> – list of lists. Each element is a dict that represents a word. The intermediate level lists
 represent a sentence each. spaces and comma’s are still considered words at this level</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>found_entities. A list of lists. Each intermediate list represents a BERT-found entity of type
 <cite>self.type_of_list</cite> (e.g. a location)</p>
 </dd>
@@ -827,7 +827,7 @@ represent a sentence each. spaces and comma’s are still considered words at th
 <dt id="lib.ner_lists.get_searchable_words.GetWordsBert.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsBert.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>entity_type</strong> – The type of entity (e.g. location or person) which should be searched.</p></li>
 <li><p><strong>kwargs</strong> – any additional key-word arguments are passed to GetWords</p></li>
@@ -846,7 +846,7 @@ represent a sentence each. spaces and comma’s are still considered words at th
 <dt id="lib.ner_lists.get_searchable_words.GetWordsNer.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsNer.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A list of lists, where the inner lists contain all words that have word[‘ner’] == True for a sentence.</p>
 </dd>
 </dl>
@@ -856,7 +856,7 @@ represent a sentence each. spaces and comma’s are still considered words at th
 <dt id="lib.ner_lists.get_searchable_words.GetWordsNer.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.get_searchable_words.GetWordsNer.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>kwargs</strong> – any additional key-word arguments are passed to GetWords</p>
 </dd>
 </dl>
@@ -876,10 +876,10 @@ represent a sentence each. spaces and comma’s are still considered words at th
 <dt id="lib.ner_lists.ner_lists.NerLists.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.ner_lists.NerLists.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sentences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – List of lists of words</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The same sentences, adorned with information found in various types of lists.</p>
 </dd>
 </dl>
@@ -889,7 +889,7 @@ represent a sentence each. spaces and comma’s are still considered words at th
 <dt id="lib.ner_lists.ner_lists.NerLists.__init__">
 <code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_getter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.ner_lists.NerLists.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_dir</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Path of the lists, given as either a string or a list of strings, is processed using
 <cite>os.path.join</cite>.</p></li>
@@ -906,10 +906,10 @@ represent a sentence each. spaces and comma’s are still considered words at th
 <dt id="lib.ner_lists.ner_lists.NerLists.prefill_empty_labels">
 <em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">prefill_empty_labels</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.ner_lists.ner_lists.NerLists.prefill_empty_labels" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sentences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]) – List of lists of words</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None, the word dicts are modified by adding the “labels” key, if the word has “ner” set to True.</p>
 </dd>
 </dl>

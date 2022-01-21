@@ -4,7 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
@@ -248,7 +248,7 @@ so that it may be overridden by tests, which are performed on smaller datasets.<
 <dt id="lib.pipeline.Pipeline.__call__">
 <code class="sig-name descname"><span class="pre">__call__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lib.pipeline.Pipeline.__call__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input_data</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]]]) – <p>Either a string of historical Dutch text, if the step “string_to_sentences” is involved,
 or a dictionary corresponding to the <a class="reference download internal" download="" href="_downloads/9eb3b3cd707153332e0fca6a4c018e03/format.schema.json"><code class="xref download docutils literal notranslate"><span class="pre">json</span> <span class="pre">schema</span></code></a> if it is not.
@@ -256,8 +256,8 @@ The format of the input data in the latter case should correspond to some extent
 are to be executed. The table below provides an overview of which steps are required and/or prefered to
 have  been executed for each subsequent step. A required step must either be executed in the same call to
 the pipeline, or the results of that step must be present in the input data.</p>
-<table class="colwidths-given docutils align-default" id="id9">
-<caption><span class="caption-text">Dependency on previous steps</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="table-1">
+<caption><span class="caption-text">Dependency on previous steps</span><a class="headerlink" href="#table-1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -285,7 +285,7 @@ the pipeline, or the results of that step must be present in the input data.</p>
 </tr>
 <tr class="row-odd"><td><p>NER using BERT</p></td>
 <td><p>yes</p></td>
-<td><p>yes <a class="footnote-reference brackets" href="#id6" id="id1">1</a></p></td>
+<td><p>yes <a class="footnote-reference brackets" href="#footnote-1" id="footnote-reference-1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 <td><ul>
 <li></li>
 </ul>
@@ -293,35 +293,37 @@ the pipeline, or the results of that step must be present in the input data.</p>
 </tr>
 <tr class="row-even"><td><p>NER using Lists</p></td>
 <td><p>yes</p></td>
-<td><p>yes <a class="footnote-reference brackets" href="#id6" id="id2">1</a></p></td>
-<td><p>depends <a class="footnote-reference brackets" href="#id7" id="id3">2</a></p></td>
+<td><p>yes <a class="footnote-reference brackets" href="#footnote-1" id="footnote-reference-2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>depends <a class="footnote-reference brackets" href="#footnote-2" id="footnote-reference-3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Modernisation</p></td>
 <td><p>yes</p></td>
-<td><p>yes <a class="footnote-reference brackets" href="#id6" id="id4">1</a></p></td>
-<td><p>preferably <a class="footnote-reference brackets" href="#id8" id="id5">3</a></p></td>
+<td><p>yes <a class="footnote-reference brackets" href="#footnote-1" id="footnote-reference-4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>preferably <a class="footnote-reference brackets" href="#footnote-3" id="footnote-reference-5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
 </tr>
 </tbody>
 </table>
-<dl class="footnote brackets">
-<dt class="label" id="id6"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id4">3</a>)</span></dt>
-<dd><p>This behaviour is subject to change. If processing ground truth texts, the post-correction step
+<aside class="footnote brackets" id="footnote-1" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#footnote-reference-1">1</a>,<a role="doc-backlink" href="#footnote-reference-2">2</a>,<a role="doc-backlink" href="#footnote-reference-4">3</a>)</span>
+<p>This behaviour is subject to change. If processing ground truth texts, the post-correction step
 should be skipped. Skipping this step altogether, however, results in the absence of the
 “post_correction” key on which subsequent steps rely.</p>
-</dd>
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
-<dd><p>Depending on the configuration for the project at hand, the lists are only searched to match entities
+</aside>
+<aside class="footnote brackets" id="footnote-2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-3">2</a><span class="fn-bracket">]</span></span>
+<p>Depending on the configuration for the project at hand, the lists are only searched to match entities
 found by BERT. For such a project, e.g. SZSA, the BERT step is a prerequisite for the lists step.</p>
-</dd>
-<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
-<dd><p>The modernisation is configured to leave certain found entities unchanged. This is only possible if</p>
-</dd>
-</dl>
+</aside>
+<aside class="footnote brackets" id="footnote-3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-5">3</a><span class="fn-bracket">]</span></span>
+<p>The modernisation is configured to leave certain found entities unchanged. This is only possible if</p>
+</aside>
 </p></li>
 <li><p><strong>steps</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, …]]) – Which steps to execute within this call to the pipelines</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Dict with a format according to <cite>lib.schema (format.schema.json)</cite> Depending on which parts of the
 pipeline are called, the required input and expected output will be different.</p>
 </dd>
