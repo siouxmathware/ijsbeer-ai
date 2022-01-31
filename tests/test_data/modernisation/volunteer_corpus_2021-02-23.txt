@@ -35,7 +35,6 @@
 ^afgevaardigt$@afgevaardigde
 ^welker$@wiens
 ^prothocollen$@protocollen
-^ter$@op het
 ^secretarije$@secretariaat
 ^gejnsteerd$@aangedrongen
 ^edelhedens$@edele
@@ -46,7 +45,6 @@
 ^costij$@kosten
 ^sommatje$@bedrag
 ^mag$@mag
-^ter$@van de
 ^biedeele$@biedende
 ^persoonen$@personen
 ^haare$@haar

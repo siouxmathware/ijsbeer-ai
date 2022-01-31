@@ -648,7 +648,6 @@
 ^tegaan$@te gaan
 ^tegens$@tegen
 ^tenwyl$@terwijl
-^ter$@van de
 ^terwyl$@terwijl
 ^text$@tekst
 ^tijdelijck$@tijdelijk

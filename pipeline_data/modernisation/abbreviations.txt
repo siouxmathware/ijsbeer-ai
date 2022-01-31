@@ -4,8 +4,6 @@
 ^d[:;=„][oO0t]$@dito
 # Example A:o => anno
 ^a[:;=„][oO0]$@anno
-# Example p:o => per
-^p[:;=„]r$@per
 # weduwe before edele to make it hit first
 ^wed[:;=„]e$@weduwe
 # Everything with edele or edelen
@@ -54,25 +52,21 @@
 ^oppercoopm[:;=„]$@opperkoopman
 # Example Pag:s => pagina's
 ^pag[:;=„](s?)$@pagina\1
-# Example Ult:o => eind
-^ult[:;=„]?o?$@eind
-# Example voorsz: => vorige
-^voorsz[:;=„]?$@vorige
+# Example Ult:o => ultimo
+^ult[:;=„]?o?$@ultimo
+# Example voorsz: => voorschreven
+^voorsz[:;=„]?$@voorschreven
 # Example Pie: => predikant
 ^pie[:;=„]?$@predikant
-# Example M=r => meester
-^m[:;=„]r$@meester
 # Example Zokk=s => zakken
 ^zokk[:;=„][sn]$@zakken
-^middelb[:;=„]?$@middelbaar
+^middelb[:;=„]?$@Middelburg
 
 # From Volunteers 2021-03-02
 # Abbreviations
 ^corp[:;=„]l$@corporaal
-^gemeente[:;=„]$@gemeente
 ^getr[:;=„]$@getrouwe
 ^get(ui)?[:;=„]$@getuigen
-^gouv(ern)?[:;=„]$@gouverneur
 ^griff[:;=„]r?$@griffier
 ^h[:;=„]r$@heer
 ^h[:;=„]s$@heren
@@ -82,24 +76,20 @@
 ^bovengem[:;=]$@bovengemelde
 ^evengem[:;=]$@evengemelde
 ^resp[:;=„](e?)$@respectievelijk\1
-^opgem[:;=„]$@gemelde
 ^gestr[:;=]$@gestrenge
 ^ges?z[:;=„]$@gezien
 ^gr[:;=]$@groot
-^herw[:;=„]s$@herwaards
+^herw[:;=„]s$@herwaarts
 ^i[:;=„]r$@ingenieur
 ^(qu|kw)artierm[:;=„]r$@kwartiermeester
 ^[lt]ieuten[:;=„]t$@luitenant
-^not[:;=]$@notitie
 ^onderget[:;=]$@ondergetekende
 ^onder[ck]oo?pm[:;=„]$@onderkoopman
 ^opce?[:;=„]$@opcenten
-^[sz]old[:;=„]t$@soldaat
 ^spece[:;=]$@specerij
 ^verkl[:;=„]$@verklaring
 ^voorl[:;=]$@voorliggende
-^voorm[:;=„]$@voormalig
-^v[:;=„]m$@voormiddag
+^voorm[:;=„]$@voormelde
 ^voore?n[:;=„]$@voornoemde
 ^voor[sz]{,2}[:;=„]$@voorschreven
 ^wo[:;=]$@waaronder
@@ -138,7 +128,6 @@
 # Afkortingen van Goetgevonden
 ^admt\.$@Admiraliteijt
 ^ambr\.$@Ambassadeur
-^aen\.$@aan de
 ^burgermrs\.$@Burgermeesters
 ^capn\.$@Capiteyn
 ^ch(e?)urf:$@Ch\1urfurst
@@ -157,7 +146,6 @@
 ^ho:Mo:$@Hoogmogende
 ^lt\.$@Luitenant
 ^licentmr\.$@Licentmeester
-^mr\.$@Meester
 ^ma.\.$@Majesteit
 ^miss\.$@missive
 ^oostqr\.$@Oostquartier
